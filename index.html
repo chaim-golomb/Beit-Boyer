@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="--img-rabbi-ellis-bloch: 'p/Ellis Bloch.jpg'; --img-sanny-levi: 'p/Sunny Levy.jpg'; --img-eldad-yehoshaphat: 'p/Eldad Yehoshafat.jpg'; --img-rabbi-yehuda-bardugo: 'p/Yehuda Berdugo.jpg'; --img-rabbi-yosef-blau: 'p/Yosef Blau.jpg'; --img-rabbi-michael-melchior: 'p/Michael Melchior.jpg'; --img-jacov-greenblatt: 'p/Jacob Greenblatt.jpg'; --img-yaffa-aharonov: 'p/Yaffa Aharanov.jpg'; --img-rabbi-yedidya-sinclair: 'p/Yedidya Sinclair.jpg'; --img-stephen-markovitz: 'p/Steven Markovitz.jpg'; --img-chanoch-rozencwajg: 'p/Chanoch Rozenzwejg.jpg'; --img-mel-salzman: 'p/Mel Salzman.jpg'; --img-rabbi-michael-goldsmith: 'p/Michael Goldsmith.jpg'; --img-reva-shenker: 'p/Reva Shenkar.jpg'; --img-stephen-kurer: 'p/Steven Kurer.jpg'; --img-jonny-feinmesser: 'p/Jonny Feinmesser.jpg'; --img-new-person: 'p/Richard Shavei-Tzion.jpg'; --img-new-person-2: 'p/Sheryl Shavey-Tzion.jpg'; --img-new-person-3: 'p/Annette Magnus.jpg'; --img-benzi-gurfinkel: 'p/Benzi Gurfinkel.jpg'; --img-new-person-4: 'p/Chanoch Asaf.jpg'; --img-new-person-5: 'p/Rachel Asaf.jpg'; --img-new-person-6: 'p/Michel Rottenberg.jpg'; --img-new-person-7: 'p/Helene Rottenberg.jpg'; --img-efrat-bartov: 'p/Efrat Bartov.jpg'; --img-ariel-bartov: 'p/Ariel Bartov.jpg'; --img-new-person-8: 'p/Linda Yuter.jpg';"><head>
+<html lang="en" style="--img-rabbi-ellis-bloch: 'p/Ellis Bloch.jpg'; --img-sanny-levi: 'p/Sunny Levy.jpg'; --img-eldad-yehoshaphat: 'p/Eldad Yehoshafat.jpg'; --img-rabbi-yehuda-bardugo: 'p/Yehuda Berdugo.jpg'; --img-rabbi-yosef-blau: 'p/Yosef Blau.jpg'; --img-rabbi-michael-melchior: 'p/Michael Melchior.jpg'; --img-jacov-greenblatt: 'p/Jacob Greenblatt.jpg'; --img-yaffa-aharonov: 'p/Yaffa Aharanov.jpg'; --img-rabbi-yedidya-sinclair: 'p/Yedidya Sinclair.jpg'; --img-stephen-markovitz: 'p/Steven Markovitz.jpg'; --img-chanoch-rozencwajg: 'p/Chanoch Rozenzwejg.jpg'; --img-mel-salzman: 'p/Mel Salzman.jpg'; --img-rabbi-michael-goldsmith: 'p/Michael Goldsmith.jpg'; --img-reva-shenker: 'p/Reva Shenkar.jpg'; --img-stephen-kurer: 'p/Steven Kurer.jpg'; --img-jonny-feinmesser: 'p/Jonny Feinmesser.jpg'; --img-new-person: 'p/Richard Shavei-Tzion.jpg'; --img-new-person-2: 'p/Sheryl Shavey-Tzion.jpg'; --img-new-person-3: 'p/Annette Magnus.jpg'; --img-benzi-gurfinkel: 'p/Benzi Gurfinkel.jpg'; --img-new-person-4: 'p/Chanoch Asaf.Jpg'; --img-new-person-5: 'p/Rachel Asaf.jpg'; --img-new-person-6: 'p/Michel Rottenberg.jpg'; --img-new-person-7: 'p/Helene Rottenberg.jpg'; --img-efrat-bartov: 'p/Efrat Bartov.jpg'; --img-ariel-bartov: 'p/Ariel Bartov.jpg'; --img-new-person-8: 'p/Linda Yuter.jpg'; --img-new-person-9: 'p/Eitan Gavson.jpg'; --img-new-person-10: 'p/Hannah Gavson.jpg'; --img-new-person-11: 'p/Joel Bigman.jpg'; --img-new-person-12: 'p/Zahava Bigman.jpg'; --img-new-person-13: 'p/Sharon Horowitz.jpg';"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Picture Gallery</title>
@@ -390,7 +390,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
       <label class="cols-box" title="Pictures per row">
         <span>Per row</span>
         <input type="range" id="colsSlider" min="2" max="12" step="2" value="10" aria-label="Pictures per row">
-        <output id="colsOut" title="">12</output>
+        <output id="colsOut" title="">8</output>
       </label>
     </div>
     <span class="filter-count" id="filterCount" aria-live="polite"></span>
@@ -958,6 +958,88 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item has-feather frame-left" data-person="new-person-11" data-couple="c22" style="--fr: 4%;">
+      <a class="thumb-link" href="#p77" aria-label="Open picture 77" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 77" draggable="false" src="p/Joel Bigman.jpg">
+      </a>
+      <div class="modal" id="p77">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>4%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Joel Bigman" src="p/Joel Bigman.jpg">
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Joel Bigman</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">יואל ביגמן</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0527274145">052-7274145</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:joelbigman@yahoo.com">joelbigman@yahoo.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e=""></span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article class="item has-feather frame-right" data-person="new-person-12" data-couple="c22" style="--fl: 5%;">
+      <a class="thumb-link" href="#p78" aria-label="Open picture 78" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 78" draggable="false" src="p/Zahava Bigman.jpg">
+      </a>
+      <div class="modal" id="p78">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>5%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Zahava Bigman" src="p/Zahava Bigman.jpg">
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Zahava Bigman</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">זהבה ביגמן</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0507948769">050-7948769</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:zehavah.bigman@gmail.com">zehavah.bigman@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e=""><span style="font-size: 10pt; font-family: Roboto, Arial; font-weight: bold; color: rgb(67, 67, 67); text-align: right;" data-sheets-root="1">לייב יפה 40</span></span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item has-feather frame-left" data-person="lea-bloch" data-couple="c1" style="--fr: 5%;">
       <a class="thumb-link" href="#p2" aria-label="Open picture 2" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 2" src="p/Lea Bloch.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-lea-bloch in :root -->
@@ -1391,6 +1473,88 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0526146931">052-6146931</a></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:rwgarr@gmail.com">rwgarr@gmail.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">רחוב ביתר 42</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article class="item frame-left" data-person="new-person-9" data-couple="c21" style="--fl: 0%;">
+      <a class="thumb-link" href="#p75" aria-label="Open picture 75" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 75" draggable="false" src="p/Eitan Gavson.jpg">
+      </a>
+      <div class="modal" id="p75">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Eitan Gavson" src="p/Eitan Gavson.jpg">
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Eitan Gavson</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">איתן גבסון</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0547458708">054-7458708</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:eitan.gavson@gmail.com">eitan.gavson@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e=""><span style="font-size: 10pt; font-family: Roboto, Arial; font-weight: bold; color: rgb(67, 67, 67); text-align: right;" data-sheets-root="1">בית הערבה 12</span></span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article class="item frame-right" data-person="new-person-10" data-couple="c21">
+      <a class="thumb-link" href="#p76" aria-label="Open picture 76" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 76" draggable="false" src="p/Hannah Gavson.jpg">
+      </a>
+      <div class="modal" id="p76">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Hannah Gavsom" src="p/Hannah Gavson.jpg">
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Hannah Gavsom</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">חנה גבסון</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0547440635">054-7440635</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:hannahlrlandes@gmail.com">hannahlrlandes@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e=""></span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -1882,6 +2046,47 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item frame-round" data-person="new-person-13">
+      <a class="thumb-link" href="#p79" aria-label="Open picture 79" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 79" draggable="false" src="p/Sharon Horowitz.jpg">
+      </a>
+      <div class="modal" id="p79">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Sharon Horowitz" src="p/Sharon Horowitz.jpg">
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Sharon Horowitz</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">שרון הורביץ</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0547738601">054-7738601</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""></span></div>
+            <div class="address"><span class="label">Address</span><span data-e=""><span style="font-size: 10pt; font-family: Roboto, Arial; font-weight: bold; color: rgb(67, 67, 67); text-align: right;" data-sheets-root="1">בית הערבה 12</span></span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item frame-round" data-person="jess-hordes">
       <a class="thumb-link" href="#p12" aria-label="Open picture 12" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 12" src="p/Jess Hordes.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-jess-hordes in :root -->
@@ -1919,6 +2124,50 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:jnhadl@aol.com">jnhadl@aol.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">בית"ר 42</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article class="item frame-round" data-person="david-wolfowicz">
+      <a class="thumb-link" href="#p51" aria-label="Open picture 51" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 51" src="p/David Wolfowicz.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-david-wolfowicz in :root -->
+      </a>
+
+      <div class="modal" id="p51">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="David Wolfowicz" src="p/David Wolfowicz.jpg">   <!-- ENLARGED PICTURE: same --img-david-wolfowicz variable -->
+
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">David Wolfowicz</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">דוד וולפוביץ</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:dwolfowicz92@gmail.com">dwolfowicz92@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">קרליבך 6</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -2007,50 +2256,6 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0526071953">052-6071953</a></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:hirschmd@gmail.com">hirschmd@gmail.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">השופט חיים כהן 6</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="david-wolfowicz">
-      <a class="thumb-link" href="#p51" aria-label="Open picture 51" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 51" src="p/David Wolfowicz.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-david-wolfowicz in :root -->
-      </a>
-
-      <div class="modal" id="p51">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="David Wolfowicz" src="p/David Wolfowicz.jpg">   <!-- ENLARGED PICTURE: same --img-david-wolfowicz variable -->
-
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">David Wolfowicz</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">דוד וולפוביץ</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:dwolfowicz92@gmail.com">dwolfowicz92@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">קרליבך 6</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -2190,6 +2395,47 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item frame-round" data-person="new-person-8">
+      <a class="thumb-link" href="#p74" aria-label="Open picture 74" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 74" draggable="false" src="p/Linda Yuter.jpg">
+      </a>
+      <div class="modal" id="p74">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Linda Yuter" src="p/Linda Yuter.jpg">
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Linda Yuter</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">לינדה יוטר</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0522987815">052-2987815</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:linda.yuter@gmail.com">linda.yuter@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">יצחק בן דור 9</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item frame-left" data-person="eldad-yehoshaphat" data-couple="c17">
       <a class="thumb-link" href="#p65" aria-label="Open picture 65" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 65" src="p/Eldad Yehoshafat.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-eldad-yehoshaphat in :root -->
@@ -2271,47 +2517,6 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0547955780">054-7955780</a></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:syehoshafat@gmail.com">syehoshafat@gmail.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">אפרתה 34</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="new-person-8">
-      <a class="thumb-link" href="#p74" aria-label="Open picture 74" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 74" draggable="false" src="p/Linda Yuter.jpg">
-      </a>
-      <div class="modal" id="p74">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Linda Yuter" src="p/Linda Yuter.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Linda Yuter</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">לינדה יוטר</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0522987815">052-2987815</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:linda.yuter@gmail.com">linda.yuter@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">יצחק בן דור 9</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -2452,6 +2657,50 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item frame-round" data-person="ben-zion-lowinger">
+      <a class="thumb-link" href="#p47" aria-label="Open picture 47" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 47" src="p/Ben-Zion Lowinger.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-ben-zion-lowinger in :root -->
+      </a>
+
+      <div class="modal" id="p47">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Ben-Zion Lowinger" src="p/Ben-Zion Lowinger.jpg">   <!-- ENLARGED PICTURE: same --img-ben-zion-lowinger variable -->
+
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Ben-Zion Lowinger</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">בנציון לוינגר</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0528484100">052-8484100</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:bz.lowinger@gmail.com">bz.lowinger@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שלמה ארגוב 6</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item frame-left" data-person="sanny-levi" data-couple="c12">
       <a class="thumb-link" href="#p53" aria-label="Open picture 53" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 53" src="p/Sunny Levy.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-sanny-levi in :root -->
@@ -2533,50 +2782,6 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0542574097">054-2574097</a></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:Davidalevyusnret@gmail.com">Davidalevyusnret@gmail.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">אפרתה 31</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="ben-zion-lowinger">
-      <a class="thumb-link" href="#p47" aria-label="Open picture 47" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 47" src="p/Ben-Zion Lowinger.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-ben-zion-lowinger in :root -->
-      </a>
-
-      <div class="modal" id="p47">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Ben-Zion Lowinger" src="p/Ben-Zion Lowinger.jpg">   <!-- ENLARGED PICTURE: same --img-ben-zion-lowinger variable -->
-
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Ben-Zion Lowinger</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">בנציון לוינגר</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0528484100">052-8484100</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:bz.lowinger@gmail.com">bz.lowinger@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">שלמה ארגוב 6</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -2757,50 +2962,6 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
-    </article><article class="item frame-round" data-person="ilana-sobel">
-      <a class="thumb-link" href="#p20" aria-label="Open picture 20" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 20" src="p/Ilana Sobel.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-ilana-sobel in :root -->
-      </a>
-
-      <div class="modal" id="p20">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Ilana Sobel" src="p/Ilana Sobel.jpg">   <!-- ENLARGED PICTURE: same --img-ilana-sobel variable -->
-
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Ilana Sobel</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">אילנה סובל</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:ilana.sobel@gmail.com">ilana.sobel@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">דרך בית לחם 118</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
     </article><article class="item has-feather frame-left" data-person="dori-sobin" data-couple="c13" style="--fr: 5%;">
       <a class="thumb-link" href="#p56" aria-label="Open picture 56" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 56" src="p/Dori Sobin.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-dori-sobin in :root -->
@@ -2889,6 +3050,50 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item frame-round" data-person="ilana-sobel">
+      <a class="thumb-link" href="#p20" aria-label="Open picture 20" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 20" src="p/Ilana Sobel.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-ilana-sobel in :root -->
+      </a>
+
+      <div class="modal" id="p20">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Ilana Sobel" src="p/Ilana Sobel.jpg">   <!-- ENLARGED PICTURE: same --img-ilana-sobel variable -->
+
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Ilana Sobel</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">אילנה סובל</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:ilana.sobel@gmail.com">ilana.sobel@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">דרך בית לחם 118</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item frame-round" data-person="carol-silk">
       <a class="thumb-link" href="#p31" aria-label="Open picture 31" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 31" src="p/Carol Silk.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-carol-silk in :root -->
@@ -2926,50 +3131,6 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0587799164">058-7799164</a></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:carolsilk@gmail.com">carolsilk@gmail.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">אפרתה 33</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="daniella-salomon">
-      <a class="thumb-link" href="#p16" aria-label="Open picture 16" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 16" src="p/Daniella Salomon.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-daniella-salomon in :root -->
-      </a>
-
-      <div class="modal" id="p16">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Daniella Salomon" src="p/Daniella Salomon.jpg">   <!-- ENLARGED PICTURE: same --img-daniella-salomon variable -->
-
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Daniella Salomon</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">דניאלה סלומון</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:daniellasalomon100@gmail.com">daniellasalomon100@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">ישראל אלדד 6</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -3065,6 +3226,94 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item frame-round" data-person="daniella-salomon">
+      <a class="thumb-link" href="#p16" aria-label="Open picture 16" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 16" src="p/Daniella Salomon.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-daniella-salomon in :root -->
+      </a>
+
+      <div class="modal" id="p16">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Daniella Salomon" src="p/Daniella Salomon.jpg">   <!-- ENLARGED PICTURE: same --img-daniella-salomon variable -->
+
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Daniella Salomon</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">דניאלה סלומון</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:daniellasalomon100@gmail.com">daniellasalomon100@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">ישראל אלדד 6</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article class="item frame-round" data-person="lea-secunda">
+      <a class="thumb-link" href="#p46" aria-label="Open picture 46" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 46" src="p/Lea Secunda.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-lea-secunda in :root -->
+      </a>
+
+      <div class="modal" id="p46">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Lea Secunda" src="p/Lea Secunda.jpg">   <!-- ENLARGED PICTURE: same --img-lea-secunda variable -->
+
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Lea Secunda</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">לאה סקונדה</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:jsecunda@gmail.com">jsecunda@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">3 בונהונטורה</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item frame-left" data-person="mel-salzman" data-couple="c5">
       <a class="thumb-link" href="#p25" aria-label="Open picture 25" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 25" src="p/Mel Salzman.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-mel-salzman in :root -->
@@ -3146,94 +3395,6 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0535256651">053-5256651</a></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:saltmeha5@aol.com">saltmeha5@aol.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">אפרתה 17</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="lea-secunda">
-      <a class="thumb-link" href="#p46" aria-label="Open picture 46" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 46" src="p/Lea Secunda.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-lea-secunda in :root -->
-      </a>
-
-      <div class="modal" id="p46">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Lea Secunda" src="p/Lea Secunda.jpg">   <!-- ENLARGED PICTURE: same --img-lea-secunda variable -->
-
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Lea Secunda</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">לאה סקונדה</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:jsecunda@gmail.com">jsecunda@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">3 בונהונטורה</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="hedva-perahia">
-      <a class="thumb-link" href="#p30" aria-label="Open picture 30" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 30" src="p/Hedva Perahia.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-hedva-perahia in :root -->
-      </a>
-
-      <div class="modal" id="p30">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Hedva Perahia" src="p/Hedva Perahia.jpg">   <!-- ENLARGED PICTURE: same --img-hedva-perahia variable -->
-
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Hedva Perahia</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">חדוה פרחיה</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0504714469">050-4714469</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:heperahia@gmail.com">heperahia@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה 9</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -3329,6 +3490,50 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item frame-round" data-person="hedva-perahia">
+      <a class="thumb-link" href="#p30" aria-label="Open picture 30" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 30" src="p/Hedva Perahia.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-hedva-perahia in :root -->
+      </a>
+
+      <div class="modal" id="p30">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Hedva Perahia" src="p/Hedva Perahia.jpg">   <!-- ENLARGED PICTURE: same --img-hedva-perahia variable -->
+
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Hedva Perahia</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">חדוה פרחיה</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0504714469">050-4714469</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:heperahia@gmail.com">heperahia@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה 9</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item frame-round" data-person="barbara-freedman">
       <a class="thumb-link" href="#p23" aria-label="Open picture 23" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 23" src="p/Barbara Freedman.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-barbara-freedman in :root -->
@@ -3417,6 +3622,50 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item frame-round" data-person="chanoch-rozencwajg">
+      <a class="thumb-link" href="#p22" aria-label="Open picture 22" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 22" src="p/Chanoch Rozenzwejg.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-chanoch-rozencwajg in :root -->
+      </a>
+
+      <div class="modal" id="p22">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Chanoch Rozencwajg" src="p/Chanoch Rozenzwejg.jpg">   <!-- ENLARGED PICTURE: same --img-chanoch-rozencwajg variable -->
+
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Chanoch Rozencwajg</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">חנוך רוזנצוייג</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0508900230">050-8900230</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:hanoch.sara@gmail.com">hanoch.sara@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 33</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item has-feather frame-left" data-person="alisa-kurer" data-couple="c15" style="--fr: 19%;">
       <a class="thumb-link" href="#p62" aria-label="Open picture 62" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 62" src="p/Alisa Kurer.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-alisa-kurer in :root -->
@@ -3498,95 +3747,6 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0522864519">052-2864519</a></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:spkurer@gmail.com">spkurer@gmail.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">בית הערבה 34</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="chanoch-rozencwajg">
-      <a class="thumb-link" href="#p22" aria-label="Open picture 22" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 22" src="p/Chanoch Rozenzwejg.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-chanoch-rozencwajg in :root -->
-      </a>
-
-      <div class="modal" id="p22">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Chanoch Rozencwajg" src="p/Chanoch Rozenzwejg.jpg">   <!-- ENLARGED PICTURE: same --img-chanoch-rozencwajg variable -->
-
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Chanoch Rozencwajg</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">חנוך רוזנצוייג</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0508900230">050-8900230</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:hanoch.sara@gmail.com">hanoch.sara@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 33</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="ilene-strauss">
-      <a class="thumb-link" href="#p32" aria-label="Open picture 32" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 32" src="p/Ilene Strauss.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-ilene-strauss in :root -->
-      </a>
-
-      <div class="modal" id="p32">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Ilene Strauss" src="p/Ilene Strauss.jpg">   <!-- ENLARGED PICTURE: same --img-ilene-strauss variable -->
-
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Ilene Strauss</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">איילין שטראוס</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0586800463">058-6800463</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:igstrauss@gmail.com">igstrauss@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">שמואל לופו 2</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -3758,6 +3918,51 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article class="item frame-round" data-person="ilene-strauss">
+      <a class="thumb-link" href="#p32" aria-label="Open picture 32" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 32" src="p/Ilene Strauss.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-ilene-strauss in :root -->
+      </a>
+
+      <div class="modal" id="p32">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input placeholder="Picture link (folder path or web link) - used for the thumbnail and the enlarged picture" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Ilene Strauss" src="p/Ilene Strauss.jpg">   <!-- ENLARGED PICTURE: same --img-ilene-strauss variable -->
+
+          <div class="langs">
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Ilene Strauss</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">איילין שטראוס</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+          </div>
+
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0586800463">058-6800463</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:igstrauss@gmail.com">igstrauss@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שמואל לופו 2</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article class="item frame-round" data-person="reva-shenker">
       <a class="thumb-link" href="#p60" aria-label="Open picture 60" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 60" src="p/Reva Shenkar.jpg" draggable="false">   <!-- THUMBNAIL: picture comes from --img-reva-shenker in :root -->
@@ -3895,7 +4100,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
   </template>
 </div>
 
-<datalist id="peopleList"><option value="Ruth Egdi" label="רות אגדי"></option><option value="Rabbi Yosef Blau" label="הרב יוסף בלאו"></option><option value="Yaffa Aharonov" label="יפה אהרונוב"></option><option value="Rabbi Yedidya Sinclair" label="הרב ידידיה סינקלייר"></option><option value="Moria Ilan" label="מוריה אילן"></option><option value="Asaf Ilan" label="אסף אילן"></option><option value="Lea Bloch" label="לאה בלוק"></option><option value="Rabbi Ellis Bloch" label="הרב אליס בלוק"></option><option value="Asher Blass" label="אשר בלס"></option><option value="Rabbi Yehuda Berdugo" label="הרב יהודה ברדוגו"></option><option value="Efrat Bartov" label="אפרת ברטוב"></option><option value="Ariel Bartov" label="אריאל ברטוב"></option><option value="Rabbi Michael Goldsmith" label="הרב מיכאל גאלדשמיט"></option><option value="Chaim Golomb" label="חיים גולומב"></option><option value="Minda Garr" label="מינדה גאר"></option><option value="Aharon Garr" label="אהרן גאר"></option><option value="Mark Goldberg" label="מארק גולדברג"></option><option value="Carol Goldberg" label="קרול גולדברג"></option><option value="Daniel Gordon" label="דניאל גורדון"></option><option value="Yona Gordon" label="יונה גורדון"></option><option value="Yosi Gordon-Solove" label="יוסי גורדון-סולוב"></option><option value="Rina Gordon" label="רינה גורדון"></option><option value="Maayan Gordon" label="מעיין גורדון"></option><option value="Benjamin Gordon" label="בנג'מין גורדון"></option><option value="Benzi Gurfinkel" label="בנצי גורפינקל"></option><option value="Michael Glatzer" label="מיכאל גלצר"></option><option value="Jacov Greenblatt" label="יעקב גרינבלט"></option><option value="Jess Hordes" label="ג'ס הורדס"></option><option value="Sharon Hirsch" label="שרון הירש"></option><option value="Harry Hirsch" label="הרי הירש"></option><option value="David Wolfowicz" label="דוד וולפוביץ"></option><option value="Michal Weizman" label="מיכל ויצמן"></option><option value="Clair Zakheim" label="קליר זקהים"></option><option value="Carolyn Tal" label="קרולין טל"></option><option value="Eldad Yehoshaphat" label="אלדד יהושפט"></option><option value="Sylvi Yehoshafat" label="סילבי יהושפט"></option><option value="Haniel Cohen" label="חניאל כהן"></option><option value="Gadi Koltov" label="גדי כלטוב"></option><option value="Chavi Katz" label="חווי כץ"></option><option value="Ben-Zion Lowinger" label="בנציון לוינגר"></option><option value="Sanny Levi" label="סני לוי"></option><option value="David Levy" label="דוד לוי"></option><option value="Annette Magnus" label="אנט מגנוס"></option><option value="Rabbi Michael Melchior" label="הרב מיכאל מלכיאור"></option><option value="Esther Manheim" label="אסתר מנהיים"></option><option value="Stephen Markovitz" label="סטיבן מרקוביץ"></option><option value="Dori Sobin" label="דורי סובין"></option><option value="Richard Sobin" label="ריצ'רד סובין"></option><option value="Ilana Sobel" label="אילנה סובל"></option><option value="Carol Silk" label="קרול סילק"></option><option value="Eric Sirkin" label="אריק סירקין"></option><option value="Ellen Amzallag" label="אלן אמזלג"></option><option value="Daniella Salomon" label="דניאלה סלומון"></option><option value="Lea Secunda" label="לאה סקונדה"></option><option value="Mel Salzman" label="מל סלצמן"></option><option value="Harriet Salzman" label="הריאט סלצמן"></option><option value="Rachel Feinmesser" label="רחל פיינמסר"></option><option value="Jonny Feinmesser" label="ג'וני פיינמסר"></option><option value="Hedva Perahia" label="חדוה פרחיה"></option><option value="Barbara Freedman" label="ברברה פרידמן"></option><option value="Jonathan Price" label="יונתן פרייס"></option><option value="Chanoch Rozencwajg" label="חנוך רוזנצוייג"></option><option value="Alisa Kurer" label="אליסה קיורר"></option><option value="Stephen Kurer" label="סטפן קורר"></option><option value="Richard Shavei-Tzion" label="ריצ'רד שבי-ציון"></option><option value="Sheryl Shavey-Tzion" label="שריל שבי-ציון"></option><option value="Ilene Strauss" label="איילין שטראוס"></option><option value="Reva Shenker" label="רבה שנקר"></option><option value="Chanoch Asaf" label="חנוך אסף"></option><option value="Rachel Asaf" label="רחל אסף"></option><option value="Paul Schaefer" label="פול שפר"></option><option value="Michel Rottenberg" label="מישל רוטנברג"></option><option value="Helene Rottenberg" label="הלן רוטנברג"></option></datalist>
+<datalist id="peopleList"><option value="Ruth Egdi" label="רות אגדי"></option><option value="Rabbi Yosef Blau" label="הרב יוסף בלאו."></option><option value="Yaffa Aharonov" label="יפה אהרונוב"></option><option value="Rabbi Yedidya Sinclair" label="הרב ידידיה סינקלייר."></option><option value="Moria Ilan" label="מוריה אילן"></option><option value="Asaf Ilan" label="אסף אילן"></option><option value="Chanoch Asaf" label="חנוך אסף"></option><option value="Rachel Asaf" label="רחל אסף"></option><option value="Lea Bloch" label="לאה בלוק"></option><option value="Rabbi Ellis Bloch" label="הרב אליס בלוק."></option><option value="Asher Blass" label="אשר בלס"></option><option value="Rabbi Yehuda Berdugo" label="הרב יהודה ברדוגו."></option><option value="Efrat Bartov" label="אפרת ברטוב"></option><option value="Ariel Bartov" label="אריאל ברטוב"></option><option value="Rabbi Michael Goldsmith" label="הרב מיכאל גאלדשמיט."></option><option value="Chaim Golomb" label="חיים גולומב"></option><option value="Minda Garr" label="מינדה גאר"></option><option value="Aharon Garr" label="אהרן גאר"></option><option value="Mark Goldberg" label="מארק גולדברג"></option><option value="Carol Goldberg" label="קרול גולדברג"></option><option value="Daniel Gordon" label="דניאל גורדון"></option><option value="Yona Gordon" label="יונה גורדון"></option><option value="Maayan Gordon" label="מעיין גורדון"></option><option value="Benjamin Gordon" label="בנג'מין גורדון"></option><option value="Yosi Gordon-Solove" label="יוסי גורדון-סולוב"></option><option value="Rina Gordon" label="רינה גורדון"></option><option value="Benzi Gurfinkel" label="בנצי גורפינקל"></option><option value="Michael Glatzer" label="מיכאל גלצר"></option><option value="Jacov Greenblatt" label="יעקב גרינבלט"></option><option value="Jess Hordes" label="ג'ס הורדס"></option><option value="Sharon Hirsch" label="שרון הירש"></option><option value="Harry Hirsch" label="הרי הירש"></option><option value="David Wolfowicz" label="דוד וולפוביץ"></option><option value="Michal Weizman" label="מיכל ויצמן"></option><option value="Clair Zakheim" label="קליר זקהים"></option><option value="Carolyn Tal" label="קרולין טל"></option><option value="Eldad Yehoshaphat" label="אלדד יהושפט"></option><option value="Sylvi Yehoshafat" label="סילבי יהושפט"></option><option value="Linda Yuter" label="לינדה יוטר"></option><option value="Haniel Cohen" label="חניאל כהן"></option><option value="Gadi Koltov" label="גדי כלטוב"></option><option value="Chavi Katz" label="חווי כץ"></option><option value="Sanny Levi" label="סני לוי"></option><option value="David Levy" label="דוד לוי"></option><option value="Ben-Zion Lowinger" label="בנציון לוינגר"></option><option value="Annette Magnus" label="אנט מגנוס"></option><option value="Rabbi Michael Melchior" label="הרב מיכאל מלכיאור."></option><option value="Esther Manheim" label="אסתר מנהיים"></option><option value="Stephen Markovitz" label="סטיבן מרקוביץ"></option><option value="Ilana Sobel" label="אילנה סובל"></option><option value="Dori Sobin" label="דורי סובין"></option><option value="Richard Sobin" label="ריצ'רד סובין"></option><option value="Carol Silk" label="קרול סילק"></option><option value="Daniella Salomon" label="דניאלה סלומון"></option><option value="Eric Sirkin" label="אריק סירקין"></option><option value="Ellen Amzallag" label="אלן אמזלג"></option><option value="Mel Salzman" label="מל סלצמן"></option><option value="Harriet Salzman" label="הריאט סלצמן"></option><option value="Lea Secunda" label="לאה סקונדה"></option><option value="Hedva Perahia" label="חדוה פרחיה"></option><option value="Rachel Feinmesser" label="רחל פיינמסר"></option><option value="Jonny Feinmesser" label="ג'וני פיינמסר"></option><option value="Barbara Freedman" label="ברברה פרידמן"></option><option value="Jonathan Price" label="יונתן פרייס"></option><option value="Alisa Kurer" label="אליסה קיורר"></option><option value="Stephen Kurer" label="סטפן קורר"></option><option value="Chanoch Rozencwajg" label="חנוך רוזנצוייג"></option><option value="Ilene Strauss" label="איילין שטראוס"></option><option value="Michel Rottenberg" label="מישל רוטנברג"></option><option value="Helene Rottenberg" label="הלן רוטנברג"></option><option value="Richard Shavei-Tzion" label="ריצ'רד שבי-ציון"></option><option value="Sheryl Shavey-Tzion" label="שריל שבי-ציון"></option><option value="Reva Shenker" label="רבה שנקר"></option><option value="Paul Schaefer" label="פול שפר"></option><option value="Eitan Gavson" label="איתן גבסון"></option><option value="Hannah Gavsom" label="חנה גבסון"></option><option value="Joel Bigman" label="יואל ביגמן"></option><option value="Zahava Bigman" label="זהבה ביגמן"></option></datalist>
 
 <!-- Only script: pictures from :root, name filter, couples, drag and drop, new card, sort, CSV, Edit mode, Save page, K shows/hides the Edit bar -->
 <script>
