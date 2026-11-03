@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="--img-rabbi-ellis-bloch: 'p/Ellis Bloch.jpg'; --img-sanny-levi: 'p/Sunny Levy.jpg'; --img-eldad-yehoshaphat: 'p/Eldad Yehoshafat.jpg'; --img-rabbi-yehuda-bardugo: 'p/Yehuda Berdugo.jpg'; --img-rabbi-yosef-blau: 'p/Yosef Blau.jpg'; --img-rabbi-michael-melchior: 'p/Michael Melchior.jpg'; --img-jacov-greenblatt: 'p/Jacob Greenblatt.jpg'; --img-yaffa-aharonov: 'p/Yaffa Aharanov.jpg'; --img-rabbi-yedidya-sinclair: 'p/Yedidya Sinclair.jpg'; --img-stephen-markovitz: 'p/Steven Markovitz.jpg'; --img-chanoch-rozencwajg: 'p/Chanoch Rozenzwejg.jpg'; --img-mel-salzman: 'p/Mel Salzman.jpg'; --img-rabbi-michael-goldsmith: 'p/Michael Goldsmith.jpg'; --img-reva-shenker: 'p/Reva Shenkar.jpg'; --img-stephen-kurer: 'p/Steven Kurer.jpg'; --img-jonny-feinmesser: 'p/Jonny Feinmesser.jpg'; --img-new-person: 'p/Richard Shavei-Tzion.jpg'; --img-new-person-2: 'p/Sheryl Shavey-Tzion.jpg'; --img-new-person-3: 'p/Annette Magnus.jpg'; --img-benzi-gurfinkel: 'p/Benzi Gurfinkel.jpg'; --img-new-person-4: 'p/Chanoch Asaf.Jpg'; --img-new-person-5: 'p/Rachel Asaf.jpg'; --img-new-person-6: 'p/Michel Rottenberg.jpg'; --img-new-person-7: 'p/Helene Rottenberg.jpg'; --img-efrat-bartov: 'p/Efrat Bartov.jpg'; --img-ariel-bartov: 'p/Ariel Bartov.jpg'; --img-new-person-8: 'p/Linda Yuter.jpg'; --img-new-person-9: 'p/Eitan Gavson.jpg'; --img-new-person-10: 'p/Hannah Gavson.jpg'; --img-new-person-11: 'p/Joel Bigman.jpg'; --img-new-person-12: 'p/Zahava Bigman.jpg'; --img-new-person-13: 'p/Sharon Horowitz.jpg'; --img-new-person-14: 'p/Sara Rozenzwejg.jpg';"><head>
+<html lang="en" style="--img-rabbi-ellis-bloch: 'p/Ellis Bloch.jpg'; --img-sanny-levi: 'p/Sunny Levy.jpg'; --img-eldad-yehoshaphat: 'p/Eldad Yehoshafat.jpg'; --img-rabbi-yehuda-bardugo: 'p/Yehuda Berdugo.jpg'; --img-rabbi-yosef-blau: 'p/Yosef Blau.jpg'; --img-rabbi-michael-melchior: 'p/Michael Melchior.jpg'; --img-jacov-greenblatt: 'p/Jacob Greenblatt.jpg'; --img-yaffa-aharonov: 'p/Yaffa Aharanov.jpg'; --img-rabbi-yedidya-sinclair: 'p/Yedidya Sinclair.jpg'; --img-stephen-markovitz: 'p/Steven Markovitz.jpg'; --img-chanoch-rozencwajg: 'p/Chanoch Rozenzwejg.jpg'; --img-mel-salzman: 'p/Mel Salzman.jpg'; --img-rabbi-michael-goldsmith: 'p/Michael Goldsmith.jpg'; --img-reva-shenker: 'p/Reva Shenkar.jpg'; --img-stephen-kurer: 'p/Steven Kurer.jpg'; --img-jonny-feinmesser: 'p/Jonny Feinmesser.jpg'; --img-new-person: 'p/Richard Shavei-Tzion.jpg'; --img-new-person-2: 'p/Sheryl Shavey-Tzion.jpg'; --img-new-person-3: 'p/Annette Magnus.jpg'; --img-benzi-gurfinkel: 'p/Benzi Gurfinkel.jpg'; --img-new-person-4: 'p/Chanoch Asaf.jpg'; --img-new-person-5: 'p/Rachel Asaf.jpg'; --img-new-person-6: 'p/Michel Rottenberg.jpg'; --img-new-person-7: 'p/Helene Rottenberg.jpg'; --img-efrat-bartov: 'p/Efrat Bartov.jpg'; --img-ariel-bartov: 'p/Ariel Bartov.jpg'; --img-new-person-8: 'p/Linda Yuter.jpg'; --img-new-person-9: 'p/Eitan Gavson.jpg'; --img-new-person-10: 'p/Hannah Gavson.jpg'; --img-new-person-11: 'p/Joel Bigman.jpg'; --img-new-person-12: 'p/Zahava Bigman.jpg'; --img-new-person-13: 'p/Sharon Horowitz.jpg'; --img-new-person-14: 'p/Sara Rozenzwejg.jpg';"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Picture Gallery</title>
@@ -344,7 +344,48 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
   .modal-box { max-height: 100vh; height: 100%; border-radius: 0; }
 }
 </style>
-</head>
+<style>
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    </style></head>
 <body class="">
 
 <!-- Edit bar: hidden when the page opens (--show-edit-bar: none in :root). Click the "K" in the header to show/hide it.
@@ -878,7 +919,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
       </div>
     </article><article class="item frame-left" data-person="new-person-4" data-couple="c19">
       <a class="thumb-link" href="#p70" aria-label="Open picture 70" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 70" draggable="false" src="p/Chanoch Asaf.Jpg">
+        <img class="thumb" loading="lazy" alt="Picture 70" draggable="false" src="p/Chanoch Asaf.jpg">
       </a>
       <div class="modal" id="p70">
         <a class="modal-backdrop" href="#" aria-label="Close"></a>
@@ -895,7 +936,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
             <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
           </div>
-          <img class="modal-image" loading="lazy" alt="Chanoch Asaf" src="p/Chanoch Asaf.Jpg">
+          <img class="modal-image" loading="lazy" alt="Chanoch Asaf" src="p/Chanoch Asaf.jpg">
           <div class="langs">
             <section class="col-en" lang="en">
               <h2 class="name name-en" data-e="">Chanoch Asaf</h2>
@@ -4678,6 +4719,7 @@ syncEditable();
 reframe();
 refreshContact();
 </script>
+
 
 
 
