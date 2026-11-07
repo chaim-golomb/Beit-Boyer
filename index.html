@@ -425,7 +425,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
   <div class="filter-bar">
     <div class="filter-row">
       <div class="filter-box">
-        <input type="text" id="nameFilter" dir="auto" autocomplete="off" placeholder="Filter by name · סינון לפי שם" aria-label="Filter by given or family name">
+        <input type="text" id="nameFilter" dir="auto" autocomplete="off" placeholder="Filter by name · סינון לפי שם (a, b, c)" aria-label="Filter by given or family name; separate several names with commas" title="Separate several names with commas, e.g. Bloch, Gordon">
         <button type="button" id="filterClear" aria-label="Clear filter" title="Clear filter">×</button>
       </div>
       <label class="cols-box" title="Pictures per row">
@@ -4376,7 +4376,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
-    </article><article class="item frame-left" data-person="new-person-23" data-couple="c27">
+    </article><article class="item has-feather frame-left" data-person="new-person-23" data-couple="c27" style="--fr: 4%;">
       <a class="thumb-link" href="#p89" aria-label="Open picture 89" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 89" draggable="false" src="p/Neomi Schechter.jpg">
       </a>
@@ -4393,7 +4393,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
           <div class="edit-feather">
             <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>4%</output></label>
           </div>
           <img class="modal-image" loading="lazy" alt="Naomi Schechter" src="p/Neomi Schechter.jpg">
           <div class="langs">
@@ -4502,7 +4502,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
-    </article><article class="item frame-right" data-person="new-person-25" data-couple="c28">
+    </article><article class="item has-feather frame-right" data-person="new-person-25" data-couple="c28" style="--fr: 5%; --fl: 5%;">
       <a class="thumb-link" href="#p91" aria-label="Open picture 91" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 91" draggable="false" src="p/Dov Stuczynski.jpg">
       </a>
@@ -4518,18 +4518,18 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
           </div>
           <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>5%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>5%</output></label>
           </div>
           <img class="modal-image" loading="lazy" alt="Dov Stuczynski" src="p/Dov Stuczynski.jpg">
           <div class="langs">
             <section class="col-en" lang="en">
               <h2 class="name name-en" data-e="">Dov Stuczynski</h2>
-              <p class="textbox text-en" data-e=""><p style="color: rgb(102, 102, 102); font-family: &quot;Nexus Sans Pro&quot;, sans-serif;">I am Head of the&nbsp; General History Department, Bar-Ilan Ubiversity</p><p style="color: rgb(102, 102, 102); font-family: &quot;Nexus Sans Pro&quot;, sans-serif;">My two main fields of research explore the Converso phenomenon—mainly in Portugal—and early modern encounters between Europeans and non-Europeans—mainly Amerindians. I am interested in the relationship between religion and politics in medieval and early modern periods.&nbsp;</p></p>
+              <p class="textbox text-en" data-e=""></p><p style="color: rgb(102, 102, 102); font-family: &quot;Nexus Sans Pro&quot;, sans-serif;">I am Head of the&nbsp; General History Department, Bar-Ilan Ubiversity</p><p style="color: rgb(102, 102, 102); font-family: &quot;Nexus Sans Pro&quot;, sans-serif;">My two main fields of research explore the Converso phenomenon—mainly in Portugal—and early modern encounters between Europeans and non-Europeans—mainly Amerindians. I am interested in the relationship between religion and politics in medieval and early modern periods.&nbsp;</p><p></p>
             </section>
             <section class="col-he" lang="he" dir="rtl">
               <h2 class="name name-he" data-e="">דב סטוצ'ינסקי</h2>
-              <p class="textbox text-he" data-e=""><div>אני עומד בראש המחלקה להיסטוריה כללית באוניברסיטת בר-אילן.</div><div><br></div><div>שני תחומי המחקר העיקריים שלי עוסקים בתופעת ה"קונברסוס" (אנוסים) – בעיקר בפורטוגל – ובמפגשים בתקופה המודרנית המוקדמת בין אירופים לבין לא-אירופים, בדגש על ילידי יבשת אמריקה. אני מתעניין בקשר שבין דת לפוליטיקה בימי הביניים ובתקופה המודרנית המוקדמת.</div></p>
+              <p class="textbox text-he" data-e=""></p><div>אני עומד בראש המחלקה להיסטוריה כללית באוניברסיטת בר-אילן.</div><div><br></div><div>שני תחומי המחקר העיקריים שלי עוסקים בתופעת ה"קונברסוס" (אנוסים) – בעיקר בפורטוגל – ובמפגשים בתקופה המודרנית המוקדמת בין אירופים לבין לא-אירופים, בדגש על ילידי יבשת אמריקה. אני מתעניין בקשר שבין דת לפוליטיקה בימי הביניים ובתקופה המודרנית המוקדמת.</div><p></p>
             </section>
           </div>
           <div class="contact">
@@ -4866,16 +4866,26 @@ function moveUnit(src, target, before) {
 function norm(t) {
   return String(t).normalize('NFD').replace(/[\u0300-\u036f\u0591-\u05c7\u200e\u200f]/g, '').toLowerCase();
 }
+/* Several search strings can be typed, separated by commas (also , and the Arabic comma).
+   A card is shown if it matches ANY of the comma-separated strings.
+   Inside one string, words separated by spaces must ALL be found (e.g. "yosef blau, ellis" = Yosef Blau OR Ellis). */
+function parseFilter(value) {
+  return norm(value).split(/[,\uFF0C\u060C]/).map(function (part) {
+    return part.split(/\s+/).filter(Boolean);       /* one group = the words of one search string */
+  }).filter(function (g) { return g.length; });       /* ignore empty strings (e.g. a trailing comma) */
+}
 function applyFilter() {
-  var q = norm(document.getElementById('nameFilter').value).split(/\s+/).filter(Boolean);
+  var groups = parseFilter(document.getElementById('nameFilter').value);
   var all = cards(), shown = 0;
   all.forEach(function (it) {
     var hay = norm(txt(it.querySelector('.name-en')) + ' ' + txt(it.querySelector('.name-he')));
-    var ok = q.every(function (t) { return hay.indexOf(t) !== -1; });
+    var ok = !groups.length || groups.some(function (g) {
+      return g.every(function (t) { return hay.indexOf(t) !== -1; });
+    });
     it.classList.toggle('is-hidden', !ok);
     if (ok) shown++;
   });
-  document.getElementById('filterCount').textContent = q.length ? shown + ' / ' + all.length : '';
+  document.getElementById('filterCount').textContent = groups.length ? shown + ' / ' + all.length : '';
   reframe();
 }
 function clearFilter() {
