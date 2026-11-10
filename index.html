@@ -60,10 +60,17 @@
        class="item frame-right"   -> only the 2 right-side corners rounded
        class="item frame-left"    -> only the 2 left-side corners rounded
        (order of the four values: top-left  top-right  bottom-right  bottom-left) */
-  --frame-radius:         20px;
+  --frame-radius:         15%;                 /* rounding of the picture boxes = 15% of the box (the boxes are square) */
+  --couple-radius:        7% / 15%;            /* the joint box of a couple is a bit more than twice as wide, so 15% of the
+                                                  height / ~7% of the width gives the SAME round corner as the single boxes */
   --frame-corners-round:  var(--frame-radius) var(--frame-radius) var(--frame-radius) var(--frame-radius);
   --frame-corners-right:  0 var(--frame-radius) var(--frame-radius) 0;
   --frame-corners-left:   var(--frame-radius) 0 0 var(--frame-radius);
+  /* the enlarged picture in the pop-up is wide, so it keeps a fixed rounding (a % would make it oval) */
+  --modal-radius:         20px;
+  --modal-corners-round:  var(--modal-radius) var(--modal-radius) var(--modal-radius) var(--modal-radius);
+  --modal-corners-right:  0 var(--modal-radius) var(--modal-radius) 0;
+  --modal-corners-left:   var(--modal-radius) 0 0 var(--modal-radius);
 
   /* ---- Feathering (soft fade of the picture edge) ----
        In Edit mode every card has two sliders (left / right edge, 0% = off, default).
@@ -225,7 +232,7 @@ body { margin: 0; font-family: var(--font-main); color: var(--color-text); backg
 /* Couples: one common shadow around both cards. Each card of a couple has no shadow of its own;
    the left card draws one plate behind the pair (both cards + the gap between them). */
 .item.frame-left, .item.frame-right { box-shadow: none; }
-.item.frame-left::before { content: ""; position: absolute; z-index: -1; top: 0; left: 0; width: calc(200% + var(--thumb-gap)); height: 100%; border-radius: var(--frame-radius); background: var(--thumb-placeholder); box-shadow: var(--card-shadow); pointer-events: none; }
+.item.frame-left::before { content: ""; position: absolute; z-index: -1; top: 0; left: 0; width: calc(200% + var(--thumb-gap)); height: 100%; border-radius: var(--couple-radius); background: var(--thumb-placeholder); box-shadow: var(--card-shadow); pointer-events: none; }
 
 /* Drag and drop (Edit mode): drag a picture; a couple moves as one unit */
 .editing .thumb-link { cursor: grab; }
@@ -260,10 +267,10 @@ body { margin: 0; font-family: var(--font-main); color: var(--color-text); backg
 .gallery { display: grid; gap: var(--thumb-gap); grid-template-columns: repeat(auto-fill, minmax(max(var(--thumb-min-width), calc((100% - (var(--gallery-cols) - 1) * var(--thumb-gap)) / var(--gallery-cols) - 0.5px)), 1fr)); }
 
 /* Picture frame: every .item uses --frame-corners; the class picks which of the 3 types it is */
-.item                { --frame-corners: var(--frame-corners-round); }   /* default */
-.item.frame-round    { --frame-corners: var(--frame-corners-round); }
-.item.frame-right    { --frame-corners: var(--frame-corners-right); }
-.item.frame-left     { --frame-corners: var(--frame-corners-left); }
+.item                { --frame-corners: var(--frame-corners-round); --modal-corners: var(--modal-corners-round); }   /* default */
+.item.frame-round    { --frame-corners: var(--frame-corners-round); --modal-corners: var(--modal-corners-round); }
+.item.frame-right    { --frame-corners: var(--frame-corners-right); --modal-corners: var(--modal-corners-right); }
+.item.frame-left     { --frame-corners: var(--frame-corners-left);  --modal-corners: var(--modal-corners-left); }
 .item { background: var(--thumb-placeholder); border-radius: var(--frame-corners); box-shadow: var(--card-shadow); position: relative; }
 .thumb-link, .thumb { border-radius: var(--frame-corners); }
 
@@ -278,7 +285,7 @@ body { margin: 0; font-family: var(--font-main); color: var(--color-text); backg
 .modal-backdrop { position: absolute; inset: 0; }            /* click outside = close */
 .modal-box { position: relative; width: 100%; max-width: var(--modal-max-width); max-height: var(--modal-max-height); overflow-y: auto; background: var(--color-surface); border-radius: var(--radius); padding: var(--modal-padding); }
 .modal-close { position: sticky; top: 0; float: right; z-index: 2; width: 40px; height: 40px; border-radius: 50%; background: var(--color-accent); color: #fff; font-size: 1.5rem; line-height: 40px; text-align: center; text-decoration: none; }
-.modal-image { display: var(--show-modal-image); width: 100%; max-height: var(--modal-image-max-h); object-fit: contain; background: var(--thumb-placeholder); border-radius: var(--frame-corners); margin-bottom: var(--space); }
+.modal-image { display: var(--show-modal-image); width: 100%; max-height: var(--modal-image-max-h); object-fit: contain; background: var(--thumb-placeholder); border-radius: var(--modal-corners); margin-bottom: var(--space); }
 
 /* Two language columns: English LEFT, Hebrew RIGHT. The name is shown here only, never on the thumbnail */
 .langs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space); }
@@ -5113,10 +5120,23 @@ function applyFrames(els) {
     else { els[i].classList.add('frame-round'); i += 1; }
   }
 }
+/* Called after every filter change. When cards are hidden the remaining ones move up, so a couple could land on an
+   EVEN place (last column of a row): its left half would sit at the end of one row and the right half at the start of
+   the next. To prevent that, the visible cards are re-lined-up (couples on odd + even places, a single card is
+   moved in front of / behind a couple where needed). This is done with the CSS "order" property only - the cards
+   keep their real order in the page, and everything returns to normal when the filter is cleared. */
 function reframe() {
   var all = cards(), vis = all.filter(function (c) { return !c.classList.contains('is-hidden'); });
-  all.forEach(function (c) { if (vis.indexOf(c) === -1) { c.classList.remove('frame-left', 'frame-right'); c.classList.add('frame-round'); } });
-  applyFrames(vis);
+  var seq = vis;
+  all.forEach(function (c) {
+    c.style.removeProperty('order');
+    if (vis.indexOf(c) === -1) { c.classList.remove('frame-left', 'frame-right'); c.classList.add('frame-round'); }
+  });
+  if (vis.length < all.length) {                                  /* a filter is active */
+    seq = alignUnits(buildUnits(vis));
+    seq.forEach(function (c, i) { c.style.order = i; });
+  }
+  applyFrames(seq);
 }
 function layoutAll() { applyOrder(alignUnits(buildUnits(cards()))); reframe(); }
 
@@ -5524,7 +5544,7 @@ function savePage() {
   clone.style.removeProperty('--gallery-cols');                   /* the number per row depends on the screen: not saved */
   if (!clone.getAttribute('style')) clone.removeAttribute('style');
   var order = alignUnits(buildUnits(kept));
-  order.forEach(function (el) { el.classList.remove('dragging', 'drop-before', 'drop-after'); el.removeAttribute('draggable'); main.appendChild(el); });
+  order.forEach(function (el) { el.classList.remove('dragging', 'drop-before', 'drop-after'); el.removeAttribute('draggable'); el.style.removeProperty('order'); if (!el.getAttribute('style')) el.removeAttribute('style'); main.appendChild(el); });
   applyFrames(order);
   clone.querySelector('.edit-bar').className = 'edit-bar';      /* the saved page opens with the bar as set in :root */
   clone.querySelector('#filterCount').textContent = '';
