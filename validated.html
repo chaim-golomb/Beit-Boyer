@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="--img-new-person-20: 'p/Aharon Engelman.jpg'; --img-new-person-21: 'p/Miryam Engelman.jpg'; --img-new-person-6: 'p/Michel Rottenberg.jpg'; --img-new-person-7: 'p/Helene Rottenberg.jpg'; --img-new-person-79: 'p/Sara Baumol1.jpg'; --img-new-person-77: 'p/Yossi Baumol1.jpg'; --img-lea-bloch: 'p/Lea Bloch.jpg'; --img-rabbi-ellis-bloch: 'p/Ellis Bloch.jpg'; --img-michael-glatzer: 'p/Michael Glatzer1.jpg'; --img-new-person-81: 'p/Hanna Melchior.jpg'; --img-rabbi-michael-melchior: 'p/Michael Melchior.jpg'; --img-mel-salzman: 'p/Mel Salzman.jpg'; --img-harriet-salzman: 'p/Harriet Salzman.jpg'; --img-barbara-freedman: 'p/Barbara Freedman.jpg'; --img-new-person-15: 'p/Vernon Kurtz.jpg'; --img-new-person-16: 'p/Bryna Kurtz.jpg'; --img-new-person-46: 'p/Joanna Rees.jpg'; --img-new-person-45: 'p/Jeremy Rees.jpg'; --img-new-person-78: 'p/Chaim Golomb2.jpg';"><head>
+<html lang="en" style="--img-new-person-20: 'p/Aharon Engelman.jpg'; --img-new-person-21: 'p/Miryam Engelman.jpg'; --img-new-person-6: 'p/Michel Rottenberg.jpg'; --img-new-person-7: 'p/Helene Rottenberg.jpg'; --img-rabbi-yosef-blau: 'p/Yosef Blau.jpg'; --img-new-person-79: 'p/Sara Baumol1.jpg'; --img-new-person-77: 'p/Yossi Baumol1.jpg'; --img-lea-bloch: 'p/Lea Bloch.jpg'; --img-rabbi-ellis-bloch: 'p/Ellis Bloch.jpg'; --img-michael-glatzer: 'p/Michael Glatzer1.jpg'; --img-new-person-81: 'p/Hanna Melchior.jpg'; --img-rabbi-michael-melchior: 'p/Michael Melchior.jpg'; --img-mel-salzman: 'p/Mel Salzman.jpg'; --img-harriet-salzman: 'p/Harriet Salzman.jpg'; --img-barbara-freedman: 'p/Barbara Freedman.jpg'; --img-new-person-15: 'p/Vernon Kurtz.jpg'; --img-new-person-16: 'p/Bryna Kurtz.jpg'; --img-new-person-46: 'p/Joanna Rees.jpg'; --img-new-person-45: 'p/Jeremy Rees.jpg'; --img-new-person-78: 'p/Chaim Golomb2.jpg';"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Picture Gallery</title>
@@ -88,7 +88,6 @@
   /* =====================================================================
      VISIBILITY  -  block = SHOW,  none = HIDE
      ===================================================================== */
-  --show-edit-bar:      none;       /* Edit/Save buttons: none = hidden when the page opens (the "K" in the header shows/hides them); block = visible on open */
   --show-header:        block;
   --show-filter:        block;      /* name filter box above the gallery */
   --show-modal-image:   block;
@@ -142,7 +141,7 @@ body { margin: 0; font-family: var(--font-main); color: var(--color-text); backg
 .site-header-text { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; font-size: calc(var(--logo-w) / 3.4); font-weight: 700; line-height: 1.1; color: var(--header-text-color); }
 .site-header-text.left  { direction: ltr; }
 .site-header-text.right { direction: rtl; }
-.k-toggle { all: unset; display: inline; cursor: inherit; color: inherit; background: transparent; user-select: text; -webkit-tap-highlight-color: transparent; }  /* the "K" shows/hides the Edit bar */
+.k-toggle { all: unset; display: inline; cursor: inherit; color: inherit; background: transparent; user-select: text; -webkit-tap-highlight-color: transparent; }  
 .header-notes { display: flex; justify-content: space-between; align-items: stretch; direction: ltr; width: 100%; margin: 0 0 var(--space); }
 .header-note { width: 48%; padding: 1rem; background: #ffffff; color: #000000; border-radius: .25rem; box-shadow: 0 1px 3px rgba(0,0,0,.3); }
 .header-note-en { text-align: left; }
@@ -241,8 +240,8 @@ body { margin: 0; font-family: var(--font-main); color: var(--color-text); backg
 .modal-close { position: sticky; top: 0; float: right; z-index: 2; width: 40px; height: 40px; border-radius: 50%; background: var(--color-accent); color: #fff; font-size: 1.5rem; line-height: 40px; text-align: center; text-decoration: none; }
 .modal-image { display: var(--show-modal-image); width: 100%; max-height: var(--modal-image-max-h); object-fit: contain; background: var(--thumb-placeholder); border-radius: var(--modal-corners); margin-bottom: var(--space); }
 
-/* Two language columns: English LEFT, Hebrew RIGHT. The name is shown here only, never on the thumbnail */
-.langs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space); }
+/* Two language columns: Hebrew first = RIGHT column (English LEFT); on narrow screens Hebrew is on top. The name is shown here only, never on the thumbnail */
+.langs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space); direction: rtl; }   /* rtl grid: the first box (Hebrew) sits on the RIGHT; on narrow screens (one column) it is on top */
 .col-en { direction: ltr; text-align: left; }
 .col-he { direction: rtl; text-align: right; }
 .name { margin: 0 0 calc(var(--space) / 2); font-size: var(--font-size-name); }
@@ -261,12 +260,9 @@ body { margin: 0; font-family: var(--font-main); color: var(--color-text); backg
 .link    { display: var(--show-link); grid-column: 1 / -1; overflow-wrap: anywhere; }
 
 /* EDIT MODE (body gets class "editing" when the Edit button is pressed) */
-.edit-bar { display: var(--show-edit-bar); position: fixed; right: var(--space); bottom: var(--space); z-index: 200; max-width: calc(100vw - 2 * var(--space)); text-align: right; }
-.edit-bar.controls-hidden { display: none; }
-.edit-bar.controls-shown  { display: block; }   /* the "K" in the header reveals the bar */
+.edit-bar { display: none; position: fixed; right: var(--space); bottom: var(--space); z-index: 200; max-width: calc(100vw - 2 * var(--space)); text-align: right; }
+.editing .edit-bar { display: block; }   /* ALT+SHIFT+E toggles Edit mode; the bar (5 buttons) shows only in Edit mode */
 .edit-bar button { font: inherit; padding: 10px 16px; margin: 3px 0 3px 6px; border: 0; border-radius: var(--radius); background: var(--color-edit); color: #fff; cursor: pointer; box-shadow: var(--shadow); }
-.edit-bar .edit-mode-btn { display: none; }                      /* Sort / CSV buttons: Edit mode only */
-.editing .edit-bar .edit-mode-btn { display: inline-block; }
 .edit-only { display: none; }
 .editing .edit-only { display: block; margin-bottom: calc(var(--space) / 2); }
 .edit-only input { width: 100%; font: inherit; padding: 6px; }
@@ -436,16 +432,14 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
     </style></head>
 <body class="">
 
-<!-- Edit bar: hidden when the page opens (--show-edit-bar: none in :root). Click the "K" in the header to show/hide it.
-     New card = always; Sort + CSV buttons = only in Edit mode. -->
+<!-- Edit bar: appears only in Edit mode. Press ALT+SHIFT+E to switch Edit mode on / off. -->
 <div class="edit-bar">
-  <button type="button" id="newBtn">New card</button>
-  <button type="button" id="sortBtn" class="edit-mode-btn">Sort by Hebrew family name</button>
-  <button type="button" id="csvSaveBtn" class="edit-mode-btn">Save CSV</button>
-  <button type="button" id="csvLoadBtn" class="edit-mode-btn">Load CSV</button>
-  <input type="file" id="csvFile" accept=".csv,text/csv" hidden="">
-  <button type="button" id="editBtn">Edit mode</button>
   <button type="button" id="saveBtn">Save page</button>
+  <button type="button" id="csvSaveBtn">Save CSV</button>
+  <button type="button" id="sortBtn">Sort by Hebrew family name</button>
+  <button type="button" id="csvLoadBtn">Load CSV</button>
+  <button type="button" id="newBtn">New card</button>
+  <input type="file" id="csvFile" accept=".csv,text/csv" hidden="">
 </div>
 
 <div class="page">
@@ -455,7 +449,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
     <div class="brand-header">
       <div class="site-header">
         <div class="site-header-side">
-          <div class="site-header-text left"><span><button class="k-toggle" onclick="toggleControls()" type="button">K</button>ehilat</span>Talpiot<br>Hachadasha</div>
+          <div class="site-header-text left"><span>Kehilat</span>Talpiot<br>Hachadasha</div>
         </div>
         <div class="site-header-logo"><img alt="קהילת תלפיות החדשה - ירושלים" src="data:image/jpeg;base64,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"></div>
         <div class="site-header-side">
@@ -707,11 +701,11 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
     <!-- ============ Picture 66 ============ -->
     
 
-  <article class="item frame-left" data-person="new-person-20" data-couple="c100" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
-      <a class="thumb-link" href="#p300" aria-label="Open picture 300" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 300" draggable="false" src="p/Aharon Engelman.jpg">
+  <article id="Rabbi-Yosef-Blau" class="item frame-round" data-person="rabbi-yosef-blau" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
+      <a class="thumb-link" href="#p327" aria-label="Open picture 327" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 327" draggable="false" src="p/Yosef Blau.jpg">
       </a>
-      <div class="modal" id="p300">
+      <div class="modal" id="p327">
         <a class="modal-backdrop" href="#" aria-label="Close"></a>
         <div class="modal-box" role="dialog" aria-modal="true">
           <a class="modal-close" href="#" aria-label="Close">×</a>
@@ -729,249 +723,29 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
             <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
           </div>
-          <img class="modal-image" loading="lazy" alt="Rabbi Aharon Engelman" src="p/Aharon Engelman.jpg">
+          <img class="modal-image" loading="lazy" alt="Rabbi Yosef Blau" src="p/Yosef Blau.jpg">
           <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Rabbi Aharon Engelman</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
             <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">הרב אהרן אנגלמן</h2>
-              <p class="textbox text-he" data-e=""></p>
+              <h2 class="name name-he" data-e="">הרב יוסף בלאו</h2>
+              <p class="textbox text-he" data-e="">הוא רב אורתודוקסי אמריקאי-ישראלי. הוא היה המשגיח הרוחני בסמינר התאולוגי הרב יצחק אלחנן בין השנים 1977 ל-2025. הוא גם נשיא הציונים הדתיים של אמריקה לשעבר.</p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Rabbi Yosef Blau</h2>
+              <p class="textbox text-en" data-e="">is an American-Israeli Orthodox rabbi. He was the mashgiach ruchani at Rabbi Isaac Elchanan Theological Seminary from 1977 to 2025. He is also the former president of the Religious Zionists of America.</p>
             </section>
           </div>
           <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0545723283">054-5723283</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:englman67@gmail.com">englman67@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">אברהם שלום יהודה 14</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0587719346">058-7719346</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:yosblau@gmail.com">yosblau@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">קורא הדורות 9</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""><a href="https://en.wikipedia.org/wiki/Yosef_Blau" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Yosef_Blau</a></span></div>
           </div>
           <div class="edit-delete">
             <button type="button" onclick="deleteCard(this)">Delete this card</button>
           </div>
         </div>
       </div>
-    </article><article class="item frame-right" data-person="new-person-21" data-couple="c100" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
-      <a class="thumb-link" href="#p301" aria-label="Open picture 301" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 301" draggable="false" src="p/Miryam Engelman.jpg">
-      </a>
-      <div class="modal" id="p301">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Miryam Engelman" src="p/Miryam Engelman.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Miryam Engelman</h2>
-              <p class="textbox text-en" data-e="">054-5723284</p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">מרים אנגלמן</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0545723284">054-5723284</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:englman@bezeqint.net">englman@bezeqint.net</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">14 אברהם שלום יהודה</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-left" data-person="new-person-79" data-notes="מאושר לפרסום" data-couple="c113" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p334" aria-label="Open picture 334" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 334" draggable="false" src="p/Sara Baumol1.jpg">
-      </a>
-      <div class="modal" id="p334">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Sara Baumol" src="p/Sara Baumol1.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Sara Baumol</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">שרה בוימל</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0528109935">052-8109935</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:sbaumol@gmail.com">sbaumol@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 32</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-right" data-person="new-person-77" data-notes="מאושר לפרסום" data-couple="c113" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p335" aria-label="Open picture 335" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 335" draggable="false" src="p/Yossi Baumol1.jpg">
-      </a>
-      <div class="modal" id="p335">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Yossi Baumol" src="p/Yossi Baumol1.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Yossi Baumol</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">יוסי בוימל</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0525665276">052-5665276</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:yossi.baumol@gmail.com">yossi.baumol@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 32</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item has-feather frame-left" data-person="lea-bloch" data-couple="c117" style="--fl: 0%; --fr: 5%;" data-notes="מאושר לפרסום">
-      <a class="thumb-link" href="#p344" aria-label="Open picture 344" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 344" draggable="false" src="p/Lea Bloch.jpg">
-      </a>
-      <div class="modal" id="p344">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>5%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Lea Bloch" src="p/Lea Bloch.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Lea Bloch</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">לאה בלוק</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0546531463">054-6531463</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:emb0260@gmail.com">emb0260@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">קורא הדורות 11</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-right" data-person="rabbi-ellis-bloch" data-couple="c117" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
-      <a class="thumb-link" href="#p345" aria-label="Open picture 345" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 345" draggable="false" src="p/Ellis Bloch.jpg">
-      </a>
-      <div class="modal" id="p345">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Rabbi Ellis Bloch" src="p/Ellis Bloch.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Rabbi Ellis Bloch</h2>
-              <p class="textbox text-en" data-e="">An American Orthodox rabbi who served for 22 years as rabbi of the Washington Heights Congregation in New York. He also served for decades as an educator and administrator at Yeshiva University and served in an executive position at The Jewish Education Project. He currently resides in Israel and serves as the congregation's rabbi emeritus.</p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">הרב אליס בלוק</h2>
-              <p class="textbox text-he" data-e="">רב אורתודוקסי אמריקאי, אשר שימש במשך כ-22 שנים כרב של קהילת "קהל עדת ישורון" (Washington Heights Congregation) בניו יורק. בנוסף, הוא פעל במשך עשרות שנים כמחנך ומנהל במוסדות החינוך של ישיבה אוניברסיטי וכיהן בתפקיד ניהולי בארגון החינוך היהודי "The Jewish Education Project". כיום הוא מתגורר בישראל ומשמש כרב אמריטוס של הקהילה.</p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0546531463">054-6531463</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:emb0260@gmail.com">emb0260@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">קורא הדורות 11</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="new-person-78" data-notes="מאושר לפרסום" style="--fl: 0%; --fr: 0%;">
+    </article><article id="Chaim-Golomb" class="item frame-round" data-person="new-person-78" data-notes="מאושר לפרסום" style="--fl: 0%; --fr: 0%;">
       <a class="thumb-link" href="#p442" aria-label="Open picture 442" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 442" draggable="false" src="p/Chaim Golomb2.jpg">
       </a>
@@ -995,13 +769,13 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
           <img class="modal-image" loading="lazy" alt="Chaim Golomb" src="p/Chaim Golomb2.jpg">
           <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Chaim Golomb</h2>
-              <p class="textbox text-en" data-e="">Chaim Golomb is a retiree, an electronics engineer by training.He has been a member of the New Talpiot community since 2022.</p>
-            </section>
             <section class="col-he" lang="he" dir="rtl">
               <h2 class="name name-he" data-e="">חיים גולומב</h2>
-              <p class="textbox text-he" data-e="">חיים גולומב הוא גמלאי, מהנדס אלקטרוניקה בהכשרתו.הוא חבר בקהילת תלפיות החדשה משנת 2022.</p>
+              <p class="textbox text-he" data-e="">חיים גולומב הוא גמלאי, מהנדס אלקטרוניקה בהכשרתו.<div>הוא זה שבונה את היישום הזה. אפשר ליצור איתו קשר בנושא.</div><div>הוא חבר בקהילת תלפיות החדשה משנת 2022.</div></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Chaim Golomb</h2>
+              <p class="textbox text-en" data-e="">Chaim Golomb is a retiree, an electronics engineer by training.&nbsp;<div>He is building this application. You can contact him on this mater.&nbsp;</div><div>He has been a member of the New Talpiot community since 2022.&nbsp;</div></p>
             </section>
           </div>
           <div class="contact">
@@ -1015,7 +789,271 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
-    </article><article class="item frame-round" data-person="michael-glatzer" data-notes="מאושר לפרסום" style="--fl: 0%; --fr: 0%;">
+    </article><article id="Miryam-Engelman" class="item frame-left" data-person="new-person-21" data-couple="c100" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
+      <a class="thumb-link" href="#p301" aria-label="Open picture 301" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 301" draggable="false" src="p/Miryam Engelman.jpg">
+      </a>
+      <div class="modal" id="p301">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Miryam Engelman" src="p/Miryam Engelman.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">מרים אנגלמן</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Miryam Engelman</h2>
+              <p class="textbox text-en" data-e="">054-5723284</p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0545723284">054-5723284</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:englman@bezeqint.net">englman@bezeqint.net</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">14 אברהם שלום יהודה</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Rabbi-Aharon-Engelman" class="item frame-right" data-person="new-person-20" data-couple="c100" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
+      <a class="thumb-link" href="#p300" aria-label="Open picture 300" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 300" draggable="false" src="p/Aharon Engelman.jpg">
+      </a>
+      <div class="modal" id="p300">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Rabbi Aharon Engelman" src="p/Aharon Engelman.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">הרב אהרן אנגלמן</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Rabbi Aharon Engelman</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0545723283">054-5723283</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:englman67@gmail.com">englman67@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">אברהם שלום יהודה 14</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Sara-Baumol" class="item frame-left" data-person="new-person-79" data-notes="מאושר לפרסום" data-couple="c113" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p334" aria-label="Open picture 334" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 334" draggable="false" src="p/Sara Baumol1.jpg">
+      </a>
+      <div class="modal" id="p334">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Sara Baumol" src="p/Sara Baumol1.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">שרה בוימל</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Sara Baumol</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0528109935">052-8109935</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:sbaumol@gmail.com">sbaumol@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 32</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Yossi-Baumol" class="item frame-right" data-person="new-person-77" data-notes="מאושר לפרסום" data-couple="c113" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p335" aria-label="Open picture 335" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 335" draggable="false" src="p/Yossi Baumol1.jpg">
+      </a>
+      <div class="modal" id="p335">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Yossi Baumol" src="p/Yossi Baumol1.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">יוסי בוימל</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Yossi Baumol</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0525665276">052-5665276</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:yossi.baumol@gmail.com">yossi.baumol@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 32</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Lea-Bloch" class="item has-feather frame-left" data-person="lea-bloch" data-couple="c117" style="--fl: 0%; --fr: 5%;" data-notes="מאושר לפרסום">
+      <a class="thumb-link" href="#p344" aria-label="Open picture 344" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 344" draggable="false" src="p/Lea Bloch.jpg">
+      </a>
+      <div class="modal" id="p344">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>5%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Lea Bloch" src="p/Lea Bloch.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">לאה בלוק</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Lea Bloch</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0546531463">054-6531463</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:emb0260@gmail.com">emb0260@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">קורא הדורות 11</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Rabbi-Ellis-Bloch" class="item frame-right" data-person="rabbi-ellis-bloch" data-couple="c117" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
+      <a class="thumb-link" href="#p345" aria-label="Open picture 345" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 345" draggable="false" src="p/Ellis Bloch.jpg">
+      </a>
+      <div class="modal" id="p345">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Rabbi Ellis Bloch" src="p/Ellis Bloch.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">הרב אליס בלוק</h2>
+              <p class="textbox text-he" data-e="">רב אורתודוקסי אמריקאי, אשר שימש במשך כ-22 שנים כרב של קהילת "קהל עדת ישורון" (Washington Heights Congregation) בניו יורק. בנוסף, הוא פעל במשך עשרות שנים כמחנך ומנהל במוסדות החינוך של ישיבה אוניברסיטי וכיהן בתפקיד ניהולי בארגון החינוך היהודי "The Jewish Education Project". כיום הוא מתגורר בישראל ומשמש כרב אמריטוס של הקהילה.</p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Rabbi Ellis Bloch</h2>
+              <p class="textbox text-en" data-e="">An American Orthodox rabbi who served for 22 years as rabbi of the Washington Heights Congregation in New York. He also served for decades as an educator and administrator at Yeshiva University and served in an executive position at The Jewish Education Project. He currently resides in Israel and serves as the congregation's rabbi emeritus.</p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0546531463">054-6531463</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:emb0260@gmail.com">emb0260@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">קורא הדורות 11</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Michael-Glatzer" class="item frame-round" data-person="michael-glatzer" data-notes="מאושר לפרסום" style="--fl: 0%; --fr: 0%;">
       <a class="thumb-link" href="#p363" aria-label="Open picture 363" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 363" draggable="false" src="p/Michael Glatzer1.jpg">
       </a>
@@ -1039,13 +1077,13 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
           <img class="modal-image" loading="lazy" alt="Michael Glatzer" src="p/Michael Glatzer1.jpg">
           <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Michael Glatzer</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
             <section class="col-he" lang="he" dir="rtl">
               <h2 class="name name-he" data-e="">מיכאל גלצר</h2>
               <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Michael Glatzer</h2>
+              <p class="textbox text-en" data-e=""></p>
             </section>
           </div>
           <div class="contact">
@@ -1059,447 +1097,7 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
-    </article><article class="item frame-left" data-person="new-person-81" data-notes="מאושר לפרסום" data-couple="c128" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p392" aria-label="Open picture 392" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 392" draggable="false" src="p/Hanna Melchior.jpg">
-      </a>
-      <div class="modal" id="p392">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Hanna Melchior" src="p/Hanna Melchior.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Hanna Melchior</h2>
-              <p class="textbox text-en" data-e="">An occupational therapist by profession. She worked at Hansen Hospital and until her retirement was the director of occupational therapy at Shaare Zedek Hospital with expertise in hand therapy.</p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">חנה מלכיאור</h2>
-              <p class="textbox text-he" data-e="">מרפאה בעיסוק במקצועה. עבדה בביה"ח הנסן ועד ליציאתה לגמלאות היתה מנהלת תחום הריפוי בעיסוק בבי"ח שערי צדק עם מומחיות בתחום הידיים.</p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0508685451">050-8685451</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:hanna.melchior@gmail.com">hanna.melchior@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">ישראל אלדד 6</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-right" data-person="rabbi-michael-melchior" data-notes="מאושר לפרסום" data-couple="c128" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p393" aria-label="Open picture 393" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 393" draggable="false" src="p/Michael Melchior.jpg">
-      </a>
-      <div class="modal" id="p393">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Rabbi Michael Melchior" src="p/Michael Melchior.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Rabbi Michael Melchior</h2>
-              <p class="textbox text-en" data-e="">is a Jewish leader, Orthodox rabbi, thinker, and activist. He is a former Minister of Society and Diaspora Affairs, former Deputy Minister of Foreign Affairs, and former Knesset member for Meimad. He is the rabbi of the New Talpiot community in Jerusalem, Av Beit Din&nbsp;of the communities in the Nordic countries and until most recently the Chief Rabbi of Norway.</p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">הרב מיכאל מלכיאור</h2>
-              <p class="textbox text-he" data-e="">הוא מנהיג יהודי, רב אורתודוקסי, הוגה דעות ופעיל. הוא שר החברה והתפוצות לשעבר, סגן שר החוץ לשעבר, וחבר כנסת לשעבר מטעם מימד. הוא רב קהילת תלפיות החדשה בירושלים ואב בית דין של הקהילות במדינות הנורדיות ועד לאחרונה הרב הראשי של נורווגיה.</p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0507862120">050-7862120</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:rabbi@melchioroffice.org">rabbi@melchioroffice.org</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">ישראל אלדד 6</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""><a href="https://en.wikipedia.org/wiki/Michael_Melchior" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Michael_Melchior</a></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-left" data-person="mel-salzman" data-notes="מאושר לפרסום" data-couple="c135" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p412" aria-label="Open picture 412" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 412" draggable="false" src="p/Mel Salzman.jpg">
-      </a>
-      <div class="modal" id="p412">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Mel Salzman" src="p/Mel Salzman.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Mel Salzman</h2>
-              <p class="textbox text-en" data-e="">Mel made aliya in 2014 after a career as a software engineer or software project manager.</p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">מל סלצמן</h2>
-              <p class="textbox text-he" data-e="">מל עלתה ארצה בשנת 2014 לאחר קריירה כמהנדס תוכנה או מנהל פרויקטים בתוכנה.</p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0535256651">053-5256651</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:saltmeha5@aol.com">saltmeha5@aol.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 17</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-right" data-person="harriet-salzman" data-notes="מאושר לפרסום" data-couple="c135" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p413" aria-label="Open picture 413" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 413" draggable="false" src="p/Harriet Salzman.jpg">
-      </a>
-      <div class="modal" id="p413">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Harriet Salzman" src="p/Harriet Salzman.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Harriet Salzman</h2>
-              <p class="textbox text-en" data-e="">Harriet made aliya in 2014 after a career as a grade school teacher.</p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">הריאט סלצמן</h2>
-              <p class="textbox text-he" data-e="">הרייט עלתה ארצה בשנת 2014 לאחר קריירה כמורה בבית ספר יסודי.</p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0534256651">053-4256651</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:harrietinisrael@gmail.com">harrietinisrael@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 17</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-left" data-person="new-person-15" data-notes="מאושר לפרסום" data-couple="c138" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p422" aria-label="Open picture 422" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 422" draggable="false" src="p/Vernon Kurtz.jpg">
-      </a>
-      <div class="modal" id="p422">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Rabbi Vernon Kurtz" src="p/Vernon Kurtz.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Rabbi Vernon Kurtz</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">הרב ורנון קורץ</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0544200683">054-4200683</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:vkurtz@nssbethel.org">vkurtz@nssbethel.org</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">עין גדי 12</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-right" data-person="new-person-16" data-notes="מאושר לפרסום" data-couple="c138" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p423" aria-label="Open picture 423" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 423" draggable="false" src="p/Bryna Kurtz.jpg">
-      </a>
-      <div class="modal" id="p423">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Bryna Kurtz" src="p/Bryna Kurtz.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Bryna Kurtz</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">בריינה קורץ</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0549883048">054-9883048</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:Bryna.kurtz@gmail.com">Bryna.kurtz@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">עין גדי 12</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-left" data-person="new-person-6" data-notes="מאושר לפרסום" data-couple="c108" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p322" aria-label="Open picture 322" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 322" draggable="false" src="p/Michel Rottenberg.jpg">
-      </a>
-      <div class="modal" id="p322">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Michel Rottenberg" src="p/Michel Rottenberg.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Michel Rottenberg</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">מישל רוטנברג</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0545455296">0545-455296</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:michel@rottenberg.com">michel@rottenberg.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 24</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-right" data-person="new-person-7" data-notes="מאושר לפרסום" data-couple="c108" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p323" aria-label="Open picture 323" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 323" draggable="false" src="p/Helene Rottenberg.jpg">
-      </a>
-      <div class="modal" id="p323">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Helene Rottenberg" src="p/Helene Rottenberg.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Helene Rottenberg</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">הלן רוטנברג</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0547881296">054-7881296</a></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:helene@rottenberg.com">helene@rottenberg.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 24</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item has-feather frame-left" data-person="new-person-46" data-notes="מאושר לפרסום" data-couple="c141" style="--fl: 0%; --fr: 4%;">
-      <a class="thumb-link" href="#p430" aria-label="Open picture 430" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 430" draggable="false" src="p/Joanna Rees.jpg">
-      </a>
-      <div class="modal" id="p430">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>4%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Joanna Rees" src="p/Joanna Rees.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Joanna Rees</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">ג'ואנה ריס</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:joe41r@outlook.com">joe41r@outlook.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה 28</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-right" data-person="new-person-45" data-notes="מאושר לפרסום" data-couple="c141" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p431" aria-label="Open picture 431" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 431" draggable="false" src="p/Jeremy Rees.jpg">
-      </a>
-      <div class="modal" id="p431">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Jeremy Rees" src="p/Jeremy Rees.jpg">
-          <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Jeremy Rees</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">ג'רמי ריס</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:jrees1712@gmail.com">jrees1712@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article class="item frame-round" data-person="barbara-freedman" data-notes="מאושר לפרסום" style="--fl: 0%; --fr: 0%;">
+    </article><article id="Barbara-Freedman" class="item frame-round" data-person="barbara-freedman" data-notes="מאושר לפרסום" style="--fl: 0%; --fr: 0%;">
       <a class="thumb-link" href="#p417" aria-label="Open picture 417" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 417" draggable="false" src="p/Barbara Freedman.jpg">
       </a>
@@ -1523,19 +1121,459 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
           <img class="modal-image" loading="lazy" alt="Barbara Freedman" src="p/Barbara Freedman.jpg">
           <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Barbara Freedman</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
             <section class="col-he" lang="he" dir="rtl">
               <h2 class="name name-he" data-e="">ברברה פרידמן</h2>
               <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Barbara Freedman</h2>
+              <p class="textbox text-en" data-e=""></p>
             </section>
           </div>
           <div class="contact">
             <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:morahbarbara@hotmail.com">morahbarbara@hotmail.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">אפרתה 34</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Hanna-Melchior" class="item frame-left" data-person="new-person-81" data-notes="מאושר לפרסום" data-couple="c128" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p392" aria-label="Open picture 392" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 392" draggable="false" src="p/Hanna Melchior.jpg">
+      </a>
+      <div class="modal" id="p392">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Hanna Melchior" src="p/Hanna Melchior.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">חנה מלכיאור</h2>
+              <p class="textbox text-he" data-e="">מרפאה בעיסוק במקצועה. עבדה בביה"ח הנסן ועד ליציאתה לגמלאות היתה מנהלת תחום הריפוי בעיסוק בבי"ח שערי צדק עם מומחיות בתחום הידיים.</p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Hanna Melchior</h2>
+              <p class="textbox text-en" data-e="">An occupational therapist by profession. She worked at Hansen Hospital and until her retirement was the director of occupational therapy at Shaare Zedek Hospital with expertise in hand therapy.</p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0508685451">050-8685451</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:hanna.melchior@gmail.com">hanna.melchior@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">ישראל אלדד 6</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Rabbi-Michael-Melchior" class="item frame-right" data-person="rabbi-michael-melchior" data-notes="מאושר לפרסום" data-couple="c128" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p393" aria-label="Open picture 393" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 393" draggable="false" src="p/Michael Melchior.jpg">
+      </a>
+      <div class="modal" id="p393">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Rabbi Michael Melchior" src="p/Michael Melchior.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">הרב מיכאל מלכיאור</h2>
+              <p class="textbox text-he" data-e="">הוא מנהיג יהודי, רב אורתודוקסי, הוגה דעות ופעיל. הוא שר החברה והתפוצות לשעבר, סגן שר החוץ לשעבר, וחבר כנסת לשעבר מטעם מימד. הוא רב קהילת תלפיות החדשה בירושלים ואב בית דין של הקהילות במדינות הנורדיות ועד לאחרונה הרב הראשי של נורווגיה.</p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Rabbi Michael Melchior</h2>
+              <p class="textbox text-en" data-e="">is a Jewish leader, Orthodox rabbi, thinker, and activist. He is a former Minister of Society and Diaspora Affairs, former Deputy Minister of Foreign Affairs, and former Knesset member for Meimad. He is the rabbi of the New Talpiot community in Jerusalem, Av Beit Din&nbsp;of the communities in the Nordic countries and until most recently the Chief Rabbi of Norway.</p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0507862120">050-7862120</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:rabbi@melchioroffice.org">rabbi@melchioroffice.org</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">ישראל אלדד 6</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""><a href="https://en.wikipedia.org/wiki/Michael_Melchior" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Michael_Melchior</a></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Mel-Salzman" class="item frame-left" data-person="mel-salzman" data-notes="מאושר לפרסום" data-couple="c135" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p412" aria-label="Open picture 412" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 412" draggable="false" src="p/Mel Salzman.jpg">
+      </a>
+      <div class="modal" id="p412">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Mel Salzman" src="p/Mel Salzman.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">מל סלצמן</h2>
+              <p class="textbox text-he" data-e="">מל עלתה ארצה בשנת 2014 לאחר קריירה כמהנדס תוכנה או מנהל פרויקטים בתוכנה.</p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Mel Salzman</h2>
+              <p class="textbox text-en" data-e="">Mel made aliya in 2014 after a career as a software engineer or software project manager.</p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0535256651">053-5256651</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:saltmeha5@aol.com">saltmeha5@aol.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 17</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Harriet-Salzman" class="item frame-right" data-person="harriet-salzman" data-notes="מאושר לפרסום" data-couple="c135" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p413" aria-label="Open picture 413" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 413" draggable="false" src="p/Harriet Salzman.jpg">
+      </a>
+      <div class="modal" id="p413">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Harriet Salzman" src="p/Harriet Salzman.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">הריאט סלצמן</h2>
+              <p class="textbox text-he" data-e="">הרייט עלתה ארצה בשנת 2014 לאחר קריירה כמורה בבית ספר יסודי.</p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Harriet Salzman</h2>
+              <p class="textbox text-en" data-e="">Harriet made aliya in 2014 after a career as a grade school teacher.</p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0534256651">053-4256651</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:harrietinisrael@gmail.com">harrietinisrael@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 17</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Rabbi-Vernon-Kurtz" class="item frame-left" data-person="new-person-15" data-notes="מאושר לפרסום" data-couple="c138" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p422" aria-label="Open picture 422" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 422" draggable="false" src="p/Vernon Kurtz.jpg">
+      </a>
+      <div class="modal" id="p422">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Rabbi Vernon Kurtz" src="p/Vernon Kurtz.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">הרב ורנון קורץ</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Rabbi Vernon Kurtz</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0544200683">054-4200683</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:vkurtz@nssbethel.org">vkurtz@nssbethel.org</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">עין גדי 12</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Bryna-Kurtz" class="item frame-right" data-person="new-person-16" data-notes="מאושר לפרסום" data-couple="c138" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p423" aria-label="Open picture 423" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 423" draggable="false" src="p/Bryna Kurtz.jpg">
+      </a>
+      <div class="modal" id="p423">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Bryna Kurtz" src="p/Bryna Kurtz.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">בריינה קורץ</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Bryna Kurtz</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0549883048">054-9883048</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:Bryna.kurtz@gmail.com">Bryna.kurtz@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">עין גדי 12</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Michel-Rottenberg" class="item frame-left" data-person="new-person-6" data-notes="מאושר לפרסום" data-couple="c108" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p322" aria-label="Open picture 322" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 322" draggable="false" src="p/Michel Rottenberg.jpg">
+      </a>
+      <div class="modal" id="p322">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Michel Rottenberg" src="p/Michel Rottenberg.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">מישל רוטנברג</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Michel Rottenberg</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0545455296">0545-455296</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:michel@rottenberg.com">michel@rottenberg.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 24</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Helene-Rottenberg" class="item frame-right" data-person="new-person-7" data-notes="מאושר לפרסום" data-couple="c108" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p323" aria-label="Open picture 323" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 323" draggable="false" src="p/Helene Rottenberg.jpg">
+      </a>
+      <div class="modal" id="p323">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Helene Rottenberg" src="p/Helene Rottenberg.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">הלן רוטנברג</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Helene Rottenberg</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0547881296">054-7881296</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:helene@rottenberg.com">helene@rottenberg.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">אפרתה 24</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Joanna-Rees" class="item has-feather frame-left" data-person="new-person-46" data-notes="מאושר לפרסום" data-couple="c141" style="--fl: 0%; --fr: 4%;">
+      <a class="thumb-link" href="#p430" aria-label="Open picture 430" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 430" draggable="false" src="p/Joanna Rees.jpg">
+      </a>
+      <div class="modal" id="p430">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>4%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Joanna Rees" src="p/Joanna Rees.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">ג'ואנה ריס</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Joanna Rees</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:joe41r@outlook.com">joe41r@outlook.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה 28</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Jeremy-Rees" class="item frame-right" data-person="new-person-45" data-notes="מאושר לפרסום" data-couple="c141" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p431" aria-label="Open picture 431" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 431" draggable="false" src="p/Jeremy Rees.jpg">
+      </a>
+      <div class="modal" id="p431">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Jeremy Rees" src="p/Jeremy Rees.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">ג'רמי ריס</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Jeremy Rees</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:jrees1712@gmail.com">jrees1712@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
@@ -1571,13 +1609,13 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
           <img class="modal-image" loading="lazy" alt="">
           <div class="langs">
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e=""></h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
             <section class="col-he" lang="he" dir="rtl">
               <h2 class="name name-he" data-e=""></h2>
               <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e=""></h2>
+              <p class="textbox text-en" data-e=""></p>
             </section>
           </div>
           <div class="contact">
@@ -2076,6 +2114,21 @@ function tidyFields() {
   });
 }
 
+
+/* ---------- Article ids: every <article> gets an id equal to its English name (the .name-en heading),
+   spaces -> hyphens (e.g. "Ruth Egdi" -> id="Ruth-Egdi"); no English name = the Hebrew name, else data-person. Duplicates get -2, -3 ... */
+function syncArticleIds() {
+  var used = Object.create(null);
+  cards().forEach(function (it) {
+    var base = (englishName(it) || txt(it.querySelector('.name-he')) || it.getAttribute('data-person') || 'card')
+      .replace(/[\s"'<>&#\/\\]+/g, '-').replace(/^-+|-+$/g, '') || 'card';
+    var id = base, n = 1;
+    while (used[id]) { n++; id = base + '-' + n; }
+    used[id] = true;
+    if (it.id !== id) it.id = id;
+  });
+}
+
 /* ---------- Edit mode ---------- */
 function syncEditable() {
   var on = document.body.classList.contains('editing');
@@ -2088,13 +2141,8 @@ function setEdit(on) {
   document.body.classList.toggle('editing', on);
   syncEditable();
   if (on) { syncPartnerInputs(); syncFeatherInputs(); syncNotesInputs(); closeNotes(); }
-  if (on === false) { tidyFields(); renderNotesPanel(); applyFilter(); }
+  if (on === false) { tidyFields(); syncArticleIds(); renderNotesPanel(); applyFilter(); }
   refreshContact();
-}
-function toggleControls() {
-  var bar = document.querySelector('.edit-bar'), shown = getComputedStyle(bar).display !== 'none';
-  bar.classList.toggle('controls-hidden', shown);
-  bar.classList.toggle('controls-shown', !shown);
 }
 
 /* ---------- New card (added at the end, so no couple moves) ---------- */
@@ -2117,7 +2165,7 @@ function createCard(wantKey, atEnd) {
   if (atEnd || !first) main.appendChild(item); else main.insertBefore(item, first);
   document.documentElement.style.setProperty('--img-' + key, "''");
   applyPic(item);
-  syncEditable();
+  syncEditable(); syncArticleIds();
   return item;
 }
 function newCard() {
@@ -2240,7 +2288,7 @@ function importCsv(text) {
       else if (!x.d.partner) unlinkCouple(x.item);
     });
   }
-  tidyFields(); clearFilter(true); layoutAll(); syncPartnerInputs(); syncFeatherInputs(); syncNotesInputs(); refreshContact();
+  tidyFields(); syncArticleIds(); clearFilter(true); layoutAll(); syncPartnerInputs(); syncFeatherInputs(); syncNotesInputs(); refreshContact();
   alert('CSV loaded: ' + updated + ' card(s) updated, ' + added + ' added.');
 }
 function loadCsvFile(file) {
@@ -2286,7 +2334,7 @@ window.addEventListener('resize', function () { fitCols(); reframe(); });
 
 /* ---------- Save page: only the displayed cards are written (couples kept on odd + even places) ---------- */
 function savePage() {
-  setEdit(false);
+  setEdit(false); syncArticleIds();
   var clone = document.documentElement.cloneNode(true);
   $all('.gallery > .item.is-hidden', clone).forEach(function (it) { it.remove(); });
   var kept = $all('.gallery > .item', clone), main = clone.querySelector('.gallery');
@@ -2303,7 +2351,7 @@ function savePage() {
   var order = alignUnits(buildUnits(kept));
   order.forEach(function (el) { el.classList.remove('dragging', 'drop-before', 'drop-after'); el.removeAttribute('draggable'); el.style.removeProperty('order'); if (!el.getAttribute('style')) el.removeAttribute('style'); main.appendChild(el); });
   applyFrames(order);
-  clone.querySelector('.edit-bar').className = 'edit-bar';      /* the saved page opens with the bar as set in :root */
+  clone.querySelector('.edit-bar').className = 'edit-bar';      /* the saved page opens with the bar hidden (not in Edit mode) */
   clone.querySelector('#filterCount').textContent = '';
   clone.querySelector('#notesPanel').innerHTML = '';              /* the Notes filter always starts as "All" */
   clone.querySelector('#notesBox').className = 'notes-box';
@@ -2313,7 +2361,13 @@ function savePage() {
 }
 
 /* ---------- wiring ---------- */
-document.getElementById('editBtn').onclick = function () { setEdit(!document.body.classList.contains('editing')); };
+/* ALT+SHIFT+E toggles Edit mode (e.code works on every keyboard layout, incl. Hebrew) */
+document.addEventListener('keydown', function (e) {
+  if (e.altKey && e.shiftKey && !e.ctrlKey && !e.metaKey && (e.code === 'KeyE' || String(e.key).toLowerCase() === 'e')) {
+    e.preventDefault();
+    setEdit(!document.body.classList.contains('editing'));
+  }
+});
 document.getElementById('saveBtn').onclick = savePage;
 document.getElementById('newBtn').onclick = newCard;
 document.getElementById('sortBtn').onclick = sortByHebrewFamily;
@@ -2324,6 +2378,7 @@ document.getElementById('nameFilter').oninput = applyFilter;
 document.getElementById('nameFilter').onkeydown = function (e) { if (e.key === 'Escape') clearFilter(); };
 document.getElementById('filterClear').onclick = function () { clearFilter().focus(); };
 cards().forEach(applyPic);
+syncArticleIds();
 syncFeatherInputs();
 syncNotesInputs();
 renderNotesPanel();
