@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="--img-new-person-20: 'p/Aharon Engelman.jpg'; --img-new-person-21: 'p/Miryam Engelman.jpg'; --img-new-person-6: 'p/Michel Rottenberg.jpg'; --img-new-person-7: 'p/Helene Rottenberg.jpg'; --img-rabbi-yosef-blau: 'p/Yosef Blau.jpg'; --img-new-person-79: 'p/Sara Baumol1.jpg'; --img-new-person-77: 'p/Yossi Baumol1.jpg'; --img-lea-bloch: 'p/Lea Bloch.jpg'; --img-rabbi-ellis-bloch: 'p/Ellis Bloch.jpg'; --img-michael-glatzer: 'p/Michael Glatzer1.jpg'; --img-new-person-81: 'p/Hanna Melchior.jpg'; --img-rabbi-michael-melchior: 'p/Michael Melchior.jpg'; --img-daniella-salomon: 'p/Daniella Salomon.jpg'; --img-mel-salzman: 'p/Mel Salzman.jpg'; --img-harriet-salzman: 'p/Harriet Salzman.jpg'; --img-barbara-freedman: 'p/Barbara Freedman.jpg'; --img-new-person-15: 'p/Vernon Kurtz.jpg'; --img-new-person-16: 'p/Bryna Kurtz.jpg'; --img-new-person-46: 'p/Joanna Rees.jpg'; --img-new-person-45: 'p/Jeremy Rees.jpg'; --img-new-person-78: 'p/Chaim Golomb2.jpg';"><head>
+<html lang="en" style="--img-new-person-20: 'p/Aharon Engelman.jpg'; --img-new-person-21: 'p/Miryam Engelman.jpg'; --img-new-person-26: 'p/Barbara Roth.jpg'; --img-new-person-27: 'p/Joel Roth.jpg'; --img-new-person-6: 'p/Michel Rottenberg.jpg'; --img-new-person-7: 'p/Helene Rottenberg.jpg'; --img-rabbi-yosef-blau: 'p/Yosef Blau.jpg'; --img-new-person-79: 'p/Sara Baumol1.jpg'; --img-new-person-77: 'p/Yossi Baumol1.jpg'; --img-lea-bloch: 'p/Lea Bloch.jpg'; --img-rabbi-ellis-bloch: 'p/Ellis Bloch.jpg'; --img-michael-glatzer: 'p/Michael Glatzer1.jpg'; --img-new-person-81: 'p/Hanna Melchior.jpg'; --img-rabbi-michael-melchior: 'p/Michael Melchior.jpg'; --img-mel-salzman: 'p/Mel Salzman.jpg'; --img-harriet-salzman: 'p/Harriet Salzman.jpg'; --img-barbara-freedman: 'p/Barbara Freedman.jpg'; --img-new-person-15: 'p/Vernon Kurtz.jpg'; --img-new-person-16: 'p/Bryna Kurtz.jpg'; --img-new-person-46: 'p/Joanna Rees.jpg'; --img-new-person-45: 'p/Jeremy Rees.jpg'; --img-new-person-78: 'p/Chaim Golomb2.jpg';"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Picture Gallery</title>
@@ -307,6 +307,47 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
 }
 </style>
 <style>
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    </style><style>
         @keyframes slideIn {
             from {
                 transform: translateX(100%);
@@ -771,11 +812,11 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           <div class="langs">
             <section class="col-he" lang="he" dir="rtl">
               <h2 class="name name-he" data-e="">חיים גולומב</h2>
-              <p class="textbox text-he" data-e="">חיים גולומב הוא גמלאי, מהנדס אלקטרוניקה בהכשרתו.<div>הוא זה שבונה את היישום הזה. אפשר ליצור איתו קשר בנושא.</div><div>הוא חבר בקהילת תלפיות החדשה משנת 2022.</div></p>
+              <p class="textbox text-he" data-e="">חיים גולומב הוא גמלאי, מהנדס אלקטרוניקה בהכשרתו. הוא זה שבונה את היישום הזה. אפשר ליצור איתו קשר בנושא. הוא חבר בקהילת תלפיות החדשה משנת 2022.</p>
             </section>
             <section class="col-en" lang="en">
               <h2 class="name name-en" data-e="">Chaim Golomb</h2>
-              <p class="textbox text-en" data-e="">Chaim Golomb is a retiree, an electronics engineer by training.&nbsp;<div>He is building this application. You can contact him on this mater.&nbsp;</div><div>He has been a member of the New Talpiot community since 2022.&nbsp;</div></p>
+              <p class="textbox text-en" data-e="">Chaim Golomb is a retiree, an electronics engineer by training. He is building this application. You can contact him on this mater. He has been a member of the New Talpiot community since 2022.&nbsp;</p>
             </section>
           </div>
           <div class="contact">
@@ -1141,6 +1182,94 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article id="Joanna-Rees" class="item has-feather frame-left" data-person="new-person-46" data-notes="מאושר לפרסום" data-couple="c141" style="--fl: 0%; --fr: 4%;">
+      <a class="thumb-link" href="#p430" aria-label="Open picture 430" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 430" draggable="false" src="p/Joanna Rees.jpg">
+      </a>
+      <div class="modal" id="p430">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>4%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Joanna Rees" src="p/Joanna Rees.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">ג'ואנה ריס</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Joanna Rees</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:joe41r@outlook.com">joe41r@outlook.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה 28</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Jeremy-Rees" class="item frame-right" data-person="new-person-45" data-notes="מאושר לפרסום" data-couple="c141" style="--fl: 0%; --fr: 0%;">
+      <a class="thumb-link" href="#p431" aria-label="Open picture 431" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 431" draggable="false" src="p/Jeremy Rees.jpg">
+      </a>
+      <div class="modal" id="p431">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Jeremy Rees" src="p/Jeremy Rees.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">ג'רמי ריס</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Jeremy Rees</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:jrees1712@gmail.com">jrees1712@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article id="Hanna-Melchior" class="item frame-left" data-person="new-person-81" data-notes="מאושר לפרסום" data-couple="c128" style="--fl: 0%; --fr: 0%;">
       <a class="thumb-link" href="#p392" aria-label="Open picture 392" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 392" draggable="false" src="p/Hanna Melchior.jpg">
@@ -1405,6 +1534,94 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
           </div>
         </div>
       </div>
+    </article><article id="Barbara-Roth" class="item frame-left" data-person="new-person-26" data-couple="c107" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
+      <a class="thumb-link" href="#p320" aria-label="Open picture 320" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 320" draggable="false" src="p/Barbara Roth.jpg">
+      </a>
+      <div class="modal" id="p320">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Barbara Roth" src="p/Barbara Roth.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">ברברה רוט</h2>
+              <p class="textbox text-he" data-e=""></p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Barbara Roth</h2>
+              <p class="textbox text-en" data-e=""></p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0546377747">054-6377747</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:bkrisrael@gmail.com">bkrisrael@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה 28</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
+    </article><article id="Rabbi-Joel-Roth" class="item frame-right" data-person="new-person-27" data-couple="c107" style="--fl: 0%; --fr: 0%;" data-notes="מאושר לפרסום">
+      <a class="thumb-link" href="#p321" aria-label="Open picture 321" draggable="false">
+        <img class="thumb" loading="lazy" alt="Picture 321" draggable="false" src="p/Joel Roth.jpg">
+      </a>
+      <div class="modal" id="p321">
+        <a class="modal-backdrop" href="#" aria-label="Close"></a>
+        <div class="modal-box" role="dialog" aria-modal="true">
+          <a class="modal-close" href="#" aria-label="Close">×</a>
+          <div class="edit-only">
+            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
+          </div>
+          <div class="edit-partner">
+            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
+            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
+          </div>
+          <div class="edit-notes">
+            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
+          </div>
+          <div class="edit-feather">
+            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
+            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
+          </div>
+          <img class="modal-image" loading="lazy" alt="Rabbi Joel Roth" src="p/Joel Roth.jpg">
+          <div class="langs">
+            <section class="col-he" lang="he" dir="rtl">
+              <h2 class="name name-he" data-e="">הרב יואל רוט</h2>
+              <p class="textbox text-he" data-e="">ג'ואל רוט הוא רב אמריקאי החבר ב"כנסת הרבנים" (Rabbinical Assembly) – הגוף הרבני של היהדות הקונסרבטיבית.&nbsp; הוא היה פרופסור לתלמוד ולמשפט יהודי בסמינר התאולוגי היהודי במשך למעלה מחמישים שנה.</p>
+            </section>
+            <section class="col-en" lang="en">
+              <h2 class="name name-en" data-e="">Rabbi Joel Roth</h2>
+              <p class="textbox text-en" data-e="">Joel Roth is an American rabbi in the Rabbinical Assembly, which is the rabbinical body of Conservative Judaism.&nbsp;He was a professor of Talmud and Jewish Law at the Jewish Theological Seminary for over fifty years.</p>
+            </section>
+          </div>
+          <div class="contact">
+            <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0585411020">058-5411020</a></span></div>
+            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:rabbi.joel.roth@gmail.com">rabbi.joel.roth@gmail.com</a></span></div>
+            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה 28</span></div>
+            <div class="link"><span class="label">Link</span><span data-e=""><a href="https://en.wikipedia.org/wiki/Joel_Roth_(rabbi)" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Joel_Roth_(rabbi)</a></span></div>
+          </div>
+          <div class="edit-delete">
+            <button type="button" onclick="deleteCard(this)">Delete this card</button>
+          </div>
+        </div>
+      </div>
     </article><article id="Michel-Rottenberg" class="item frame-left" data-person="new-person-6" data-notes="מאושר לפרסום" data-couple="c108" style="--fl: 0%; --fr: 0%;">
       <a class="thumb-link" href="#p322" aria-label="Open picture 322" draggable="false">
         <img class="thumb" loading="lazy" alt="Picture 322" draggable="false" src="p/Michel Rottenberg.jpg">
@@ -1486,138 +1703,6 @@ body:not(.editing) .contact:not(:has([data-e]:not(:empty))) { display: none; }  
             <div class="phone"><span class="label">Phone</span><span data-e=""><a href="tel:0547881296">054-7881296</a></span></div>
             <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:helene@rottenberg.com">helene@rottenberg.com</a></span></div>
             <div class="address"><span class="label">Address</span><span data-e="">אפרתה 24</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article id="Joanna-Rees" class="item has-feather frame-left" data-person="new-person-46" data-notes="מאושר לפרסום" data-couple="c141" style="--fl: 0%; --fr: 4%;">
-      <a class="thumb-link" href="#p430" aria-label="Open picture 430" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 430" draggable="false" src="p/Joanna Rees.jpg">
-      </a>
-      <div class="modal" id="p430">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>4%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Joanna Rees" src="p/Joanna Rees.jpg">
-          <div class="langs">
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">ג'ואנה ריס</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Joanna Rees</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:joe41r@outlook.com">joe41r@outlook.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה 28</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article id="Jeremy-Rees" class="item frame-right" data-person="new-person-45" data-notes="מאושר לפרסום" data-couple="c141" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p431" aria-label="Open picture 431" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 431" draggable="false" src="p/Jeremy Rees.jpg">
-      </a>
-      <div class="modal" id="p431">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Jeremy Rees" src="p/Jeremy Rees.jpg">
-          <div class="langs">
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">ג'רמי ריס</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Jeremy Rees</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:jrees1712@gmail.com">jrees1712@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">שלום יהודה</span></div>
-            <div class="link"><span class="label">Link</span><span data-e=""></span></div>
-          </div>
-          <div class="edit-delete">
-            <button type="button" onclick="deleteCard(this)">Delete this card</button>
-          </div>
-        </div>
-      </div>
-    </article><article id="Daniella-Salomon" class="item frame-round" data-person="daniella-salomon" data-notes="לבדיקה" style="--fl: 0%; --fr: 0%;">
-      <a class="thumb-link" href="#p401" aria-label="Open picture 401" draggable="false">
-        <img class="thumb" loading="lazy" alt="Picture 401" draggable="false" src="p/Daniella Salomon.jpg">
-      </a>
-      <div class="modal" id="p401">
-        <a class="modal-backdrop" href="#" aria-label="Close"></a>
-        <div class="modal-box" role="dialog" aria-modal="true">
-          <a class="modal-close" href="#" aria-label="Close">×</a>
-          <div class="edit-only">
-            <input list="picList" placeholder="Picture link - pick a suggestion or type a folder path / web link (used for the thumbnail and the enlarged picture)" onfocus="fillPics()" oninput="setPic(this)">
-          </div>
-          <div class="edit-partner">
-            <input list="peopleList" placeholder="Couple partner - pick or type the partner's English name (empty = no partner)" onfocus="fillPeople()" onchange="setPartner(this)">
-            <div class="edit-swap"><button type="button" onclick="swapPartner(this)">Swap with partner</button></div>
-          </div>
-          <div class="edit-notes">
-            <input list="notesList" dir="rtl" placeholder="הערות" onfocus="fillNotes()" oninput="setNotes(this)">
-          </div>
-          <div class="edit-feather">
-            <label>Feather left edge <input type="range" min="0" max="50" step="1" value="0" data-side="l" oninput="setFeather(this)"><output>0%</output></label>
-            <label>Feather right edge <input type="range" min="0" max="50" step="1" value="0" data-side="r" oninput="setFeather(this)"><output>0%</output></label>
-          </div>
-          <img class="modal-image" loading="lazy" alt="Daniella Salomon" src="p/Daniella Salomon.jpg">
-          <div class="langs">
-            <section class="col-he" lang="he" dir="rtl">
-              <h2 class="name name-he" data-e="">דניאלה סלומון</h2>
-              <p class="textbox text-he" data-e=""></p>
-            </section>
-            <section class="col-en" lang="en">
-              <h2 class="name name-en" data-e="">Daniella Salomon</h2>
-              <p class="textbox text-en" data-e=""></p>
-            </section>
-          </div>
-          <div class="contact">
-            <div class="phone"><span class="label">Phone</span><span data-e=""></span></div>
-            <div class="email"><span class="label">E-mail</span><span data-e=""><a href="mailto:daniellasalomon100@gmail.com">daniellasalomon100@gmail.com</a></span></div>
-            <div class="address"><span class="label">Address</span><span data-e="">ישראל אלדד 6</span></div>
             <div class="link"><span class="label">Link</span><span data-e=""></span></div>
           </div>
           <div class="edit-delete">
